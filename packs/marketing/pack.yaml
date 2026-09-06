@@ -1,0 +1,100 @@
+schemaVersion: farstax.agent-bridge.skill-pack/v1alpha1
+
+id: marketing
+name: Marketing
+version: 0.1.0
+description: >
+  Strategy, acquisition, conversion, distribution and marketing
+  measurement capabilities for a resident business agent.
+
+maintainers:
+  - name: Farstax
+    url: https://farstax.com
+
+license: MIT
+
+categories:
+  - marketing
+  - growth
+
+capabilities:
+  - market-research
+  - positioning
+  - offer-design
+  - brand-voice
+  - creative-strategy
+  - lead-magnets
+  - conversion-copy
+  - email-marketing
+  - newsletters
+  - content-distribution
+  - seo
+  - geo
+  - analytics
+  - paid-media
+  - campaign-review
+
+compatibility:
+  agentBridge: null
+  status: pending
+
+skills:
+  - id: market-research
+    path: skills/market-research
+  - id: positioning
+    path: skills/positioning
+  - id: offer-design
+    path: skills/offer-design
+  - id: brand-voice
+    path: skills/brand-voice
+  - id: creative-strategy
+    path: skills/creative-strategy
+  - id: lead-magnets
+    path: skills/lead-magnets
+  - id: conversion-copy
+    path: skills/conversion-copy
+  - id: email-sequences
+    path: skills/email-sequences
+  - id: newsletters
+    path: skills/newsletters
+  - id: content-atomisation
+    path: skills/content-atomisation
+  - id: campaign-review
+    path: skills/campaign-review
+  - id: seo-analysis
+    path: skills/seo-analysis
+  - id: keyword-research
+    path: skills/keyword-research
+  - id: geo-optimizer
+    path: skills/geo-optimizer
+  - id: content-planner
+    path: skills/content-planner
+  - id: search-console
+    path: skills/search-console
+  - id: google-analytics
+    path: skills/google-analytics
+  - id: google-ads-audit
+    path: skills/google-ads-audit
+  - id: meta-ads-audit
+    path: skills/meta-ads-audit
+  - id: paid-ads-review
+    path: skills/paid-ads-review
+
+dependencies:
+  externalServices:
+    - notfair-mcp
+    - google-search-console
+    - google-analytics
+    - google-ads
+    - meta-ads
+  local: []
+
+secrets: []
+
+effects:
+  externalRead: true
+  externalWrite: false
+  financialSpend: false
+
+tests:
+  - tests/validate.py

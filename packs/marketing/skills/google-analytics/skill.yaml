@@ -1,0 +1,52 @@
+schemaVersion: farstax.agent-bridge.skill/v1alpha1
+
+id: google-analytics
+name: Google Analytics
+description: Query live GA4 traffic, acquisition, engagement, and conversion data.
+
+origin:
+  type: adapted-upstream
+  upstream:
+    repository: https://github.com/nowork-studio/notfair-plugin
+    path: analytics/google-analytics
+    commit: daf87d3d4c985fa34ff7843aa570bc8c0d656ec2
+    license: MIT
+  modified: true
+  importedAt: "2026-09-06"
+  lastUpstreamReview: "2026-09-06"
+
+attribution:
+  notice: ../../NOTICE.md
+
+hosts:
+  - claude
+  - codex
+  - generic-agent-skills
+
+capabilities:
+  - analytics
+
+dependencies:
+  local: []
+  externalServices:
+    - id: google-analytics
+      required: true
+      purpose: Live GA4 property data.
+      authorization: oauth
+  mcp:
+    - id: notfair
+      required: false
+      purpose: Optional hosted connector for GA4 access instead of a direct API credential.
+      hosted: true
+
+secrets: []
+
+effects:
+  level: external-read
+  externalWrite: false
+  financialSpend: false
+
+approvals: []
+
+evals:
+  - evals/eval-1.md

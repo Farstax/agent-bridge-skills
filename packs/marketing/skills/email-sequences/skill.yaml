@@ -1,0 +1,42 @@
+schemaVersion: farstax.agent-bridge.skill/v1alpha1
+
+id: email-sequences
+name: Email Sequences
+description: Design welcome, nurture, launch, and recovery email sequences without manufactured pressure.
+
+origin:
+  type: farstax-authored
+  priorSource:
+    repository: nickconstantinou/antigravity-marketing
+    path: .agent/skills/email-sequences
+    note: >
+      Modernised from "The Conversion Engine" skill. Kept the
+      structure-matches-goal logic; removed fixed send-time prescriptions,
+      manufactured urgency framing, and fabricated countdown patterns.
+  modified: true
+
+hosts:
+  - claude
+  - codex
+  - generic-agent-skills
+
+capabilities:
+  - email-marketing
+
+dependencies:
+  local: []
+  externalServices: []
+  mcp: []
+
+secrets: []
+
+effects:
+  level: draft-proposed-write
+  externalWrite: false
+  financialSpend: false
+
+approvals:
+  - Operator reviews sequence content and confirms any claim, deadline, or bonus before scheduling.
+
+evals:
+  - evals/eval-1.md

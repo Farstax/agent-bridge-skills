@@ -1,0 +1,53 @@
+schemaVersion: farstax.agent-bridge.skill/v1alpha1
+
+id: content-planner
+name: Content Planner
+description: Build a dated content calendar from real Search Console demand data.
+
+origin:
+  type: adapted-upstream
+  upstream:
+    repository: https://github.com/nowork-studio/notfair-plugin
+    path: seo/content-planner
+    commit: daf87d3d4c985fa34ff7843aa570bc8c0d656ec2
+    license: MIT
+  modified: true
+  importedAt: "2026-09-06"
+  lastUpstreamReview: "2026-09-06"
+
+attribution:
+  notice: ../../NOTICE.md
+
+hosts:
+  - claude
+  - codex
+  - generic-agent-skills
+
+capabilities:
+  - seo
+  - content
+
+dependencies:
+  local: []
+  externalServices:
+    - id: google-search-console
+      required: true
+      purpose: Live query, position, and impression data the calendar is built from.
+      authorization: oauth
+  mcp:
+    - id: notfair
+      required: false
+      purpose: Optional hosted connector for Search Console access instead of a direct API credential.
+      hosted: true
+
+secrets: []
+
+effects:
+  level: external-read
+  externalWrite: false
+  financialSpend: false
+
+approvals: []
+
+evals:
+  - evals/eval-1.md

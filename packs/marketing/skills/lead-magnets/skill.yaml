@@ -1,0 +1,42 @@
+schemaVersion: farstax.agent-bridge.skill/v1alpha1
+
+id: lead-magnets
+name: Lead Magnets
+description: Design a narrow, high-value free asset that leads to the core offer.
+
+origin:
+  type: farstax-authored
+  priorSource:
+    repository: nickconstantinou/antigravity-marketing
+    path: .agent/skills/lead-magnet
+    note: >
+      Modernised from the "High-Value Lead Magnet Architect" skill. Kept the
+      speed-to-value validation logic; removed the fixed JSON output
+      contract and hype framing ("feels illegal to give away").
+  modified: true
+
+hosts:
+  - claude
+  - codex
+  - generic-agent-skills
+
+capabilities:
+  - lead-magnets
+
+dependencies:
+  local: []
+  externalServices: []
+  mcp: []
+
+secrets: []
+
+effects:
+  level: draft-proposed-write
+  externalWrite: false
+  financialSpend: false
+
+approvals:
+  - Operator reviews the drafted asset and landing copy before publishing.
+
+evals:
+  - evals/eval-1.md

@@ -1,0 +1,41 @@
+schemaVersion: farstax.agent-bridge.skill/v1alpha1
+
+id: brand-voice
+name: Brand Voice
+description: Define one consistent, human brand voice as a filter for other writing Skills.
+
+origin:
+  type: farstax-authored
+  priorSource:
+    repository: nickconstantinou/antigravity-marketing
+    path: .agent/skills/brand-voice
+    note: >
+      Modernised from the "Brand Voice Constitution" skill. Replaced fixed
+      named archetypes and a generic banned-word list with a method for
+      deriving voice attributes from the brand's own material.
+  modified: true
+
+hosts:
+  - claude
+  - codex
+  - generic-agent-skills
+
+capabilities:
+  - brand-voice
+
+dependencies:
+  local: []
+  externalServices: []
+  mcp: []
+
+secrets: []
+
+effects:
+  level: local-read-only
+  externalWrite: false
+  financialSpend: false
+
+approvals: []
+
+evals:
+  - evals/eval-1.md
