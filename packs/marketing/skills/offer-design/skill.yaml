@@ -15,10 +15,7 @@ origin:
       pricing ends in 48 hours") and the fixed JSON output contract.
   modified: true
 
-hosts:
-  - claude
-  - codex
-  - generic-agent-skills
+format: agent-skills
 
 capabilities:
   - offer-design

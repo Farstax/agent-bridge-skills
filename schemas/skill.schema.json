@@ -11,7 +11,7 @@
     "name",
     "description",
     "origin",
-    "hosts",
+    "format",
     "capabilities",
     "dependencies",
     "secrets",
@@ -79,7 +79,13 @@
         "notice": { "type": "string" }
       }
     },
-    "hosts": {
+    "format": {
+      "description": "The Skill packaging format, distinct from any provider/host restriction. Agent Bridge's native projection mechanism decides which providers a given format can be installed to; a Skill should not hardcode a provider allowlist unless it genuinely only works on one provider.",
+      "type": "string",
+      "enum": ["agent-skills"]
+    },
+    "hostRestrictions": {
+      "description": "Optional. Only set this when the Skill genuinely cannot run on a given provider (e.g. it depends on a provider-specific tool call). Absence means no known restriction, not \"untested elsewhere\".",
       "type": "array",
       "items": { "type": "string" },
       "minItems": 1
@@ -173,5 +179,25 @@
       "type": "array",
       "items": { "type": "string" }
     }
-  }
+  },
+  "allOf": [
+    {
+      "description": "effects.level is canonical. externalWrite/financialSpend must agree with it so the two can't contradict each other.",
+      "if": { "properties": { "effects": { "properties": { "level": { "enum": ["local-read-only", "external-read", "draft-proposed-write"] } } } } },
+      "then": { "properties": { "effects": { "properties": { "externalWrite": { "const": false }, "financialSpend": { "const": false } } } } }
+    },
+    {
+      "if": { "properties": { "effects": { "properties": { "level": { "const": "external-write" } } } } },
+      "then": { "properties": { "effects": { "properties": { "externalWrite": { "const": true }, "financialSpend": { "const": false } } } } }
+    },
+    {
+      "if": { "properties": { "effects": { "properties": { "level": { "const": "spend-affecting-write" } } } } },
+      "then": { "properties": { "effects": { "properties": { "externalWrite": { "const": true }, "financialSpend": { "const": true } } } } }
+    },
+    {
+      "description": "Anything at or above draft-proposed-write must declare at least one approval requirement.",
+      "if": { "properties": { "effects": { "properties": { "level": { "enum": ["draft-proposed-write", "external-write", "spend-affecting-write"] } } } } },
+      "then": { "properties": { "approvals": { "minItems": 1 } } }
+    }
+  ]
 }

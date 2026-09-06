@@ -82,11 +82,13 @@ skills:
 
 dependencies:
   externalServices:
-    - notfair-mcp
+    - notfair
     - google-search-console
+    - google-pagespeed-insights
     - google-analytics
     - google-ads
     - meta-ads
+    - keyword-data-provider
   local: []
 
 secrets: []

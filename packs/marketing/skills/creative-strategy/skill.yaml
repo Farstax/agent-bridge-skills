@@ -15,10 +15,7 @@ origin:
       banned-visuals list not grounded in the specific brand.
   modified: true
 
-hosts:
-  - claude
-  - codex
-  - generic-agent-skills
+format: agent-skills
 
 capabilities:
   - creative-strategy
