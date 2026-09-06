@@ -72,4 +72,4 @@ No external service is required if performance data is supplied directly.
 This Skill only reads and reasons over supplied material — it does not
 change, publish, or spend anything itself.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

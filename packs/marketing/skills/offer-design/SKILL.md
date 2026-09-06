@@ -58,4 +58,4 @@ No external service required. This Skill produces a draft offer only; it does
 not publish pricing or bind the business to any term. Confirm the final offer
 with the operator before it goes live anywhere.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

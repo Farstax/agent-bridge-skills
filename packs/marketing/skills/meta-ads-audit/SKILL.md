@@ -5,7 +5,7 @@ description: Read-only Meta (Facebook + Instagram) Ads account health audit and 
 
 # Meta Ads Audit
 
-Adapted from NotFair's `meta-ads-audit` Skill (see `skill.yaml`).
+Adapted from NotFair's `meta-ads-audit` Skill (see this Skill's entry in the repository root `catalogue.json`).
 **Read-only** — this Skill never mutates the account.
 
 ## Job
@@ -61,4 +61,4 @@ only. This Skill never changes budgets, targeting, or creative — any fix it
 identifies is a recommendation for the operator or a separate,
 approval-gated Skill to execute.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

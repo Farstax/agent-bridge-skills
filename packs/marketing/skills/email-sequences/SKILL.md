@@ -59,4 +59,4 @@ No specific email platform is required — this Skill produces copy and an
 outline for whatever sending tool the operator uses. It does not send email,
 create automations, or access subscriber data.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

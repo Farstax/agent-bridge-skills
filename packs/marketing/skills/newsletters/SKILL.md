@@ -56,4 +56,4 @@ than defaulting to a generic curated-links format.
 No specific email platform is required. This Skill drafts content only — it
 does not send, schedule, or access subscriber lists.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

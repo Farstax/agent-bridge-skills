@@ -38,7 +38,7 @@ commit above. Each was modified from the upstream original — trimmed to be
 self-contained (no relative includes into upstream `shared/` files that this
 pack does not import), and made provider-neutral where the upstream text
 named a specific tool. Exact per-Skill provenance, modification status, and
-last upstream review date are recorded in each Skill's `skill.yaml`.
+last upstream review date are recorded in each Skill's entry in the repository root `catalogue.json` (generated from `scripts/build-catalogue.mjs`).
 
 | Skill in this pack | Upstream path |
 |---|---|

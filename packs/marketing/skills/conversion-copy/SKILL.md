@@ -61,4 +61,4 @@ No external service required. This Skill drafts copy only — it does not
 publish, send, or run any campaign. The operator must review and approve
 copy before it goes live anywhere.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

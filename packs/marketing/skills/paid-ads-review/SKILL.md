@@ -5,7 +5,7 @@ description: Read-only, evidence-based paid-media performance review across conn
 
 # Paid Ads Review
 
-Adapted from NotFair's `paid-ads-review` Skill (see `skill.yaml`).
+Adapted from NotFair's `paid-ads-review` Skill (see this Skill's entry in the repository root `catalogue.json`).
 **Read-only.**
 
 ## Job
@@ -66,4 +66,4 @@ or an operator-supplied export; external-read only. This Skill never changes
 budgets or campaigns — route any proposed mutation to a separate,
 approval-gated Skill.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

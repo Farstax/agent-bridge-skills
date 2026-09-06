@@ -5,7 +5,7 @@ description: Query live GA4 traffic, acquisition, engagement, and conversion dat
 
 # Google Analytics
 
-Adapted from NotFair's `google-analytics` Skill (see `skill.yaml`).
+Adapted from NotFair's `google-analytics` Skill (see this Skill's entry in the repository root `catalogue.json`).
 
 ## Job
 
@@ -65,4 +65,4 @@ Read-only in this pack version: measurement configuration changes (key
 events, custom dimensions) are out of scope until this pack ships
 write-capable Skills with populated approval metadata.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

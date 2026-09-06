@@ -5,7 +5,7 @@ description: Query live Google Search Console data — clicks, impressions, CTR,
 
 # Google Search Console
 
-Adapted from NotFair's `search-console` Skill (see `skill.yaml`).
+Adapted from NotFair's `search-console` Skill (see this Skill's entry in the repository root `catalogue.json`).
 
 ## Job
 
@@ -67,4 +67,4 @@ substitute an estimate for live data.
 Requires a live Search Console connection (hosted MCP or direct Google API
 via OAuth). Read-only: this Skill queries and does not modify the property.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

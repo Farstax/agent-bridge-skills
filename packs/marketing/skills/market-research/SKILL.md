@@ -61,4 +61,4 @@ not touch customer accounts, does not write anywhere external, and does not
 store personal data; do not persist scraped personal information beyond the
 summary needed for the finding.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

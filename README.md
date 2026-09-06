@@ -13,7 +13,7 @@ and quality before they ship.
 
 ```
 Farstax/agent-bridge            Skill runtime, installation, projection,
-                                 and the Skill Pack mechanism.
+                                 and the Skill Pack mechanism (#703).
 
 Farstax/agent-bridge-skills     Curated optional domain Skill content
 (this repository)               (this repository). A Skill Pack is a
@@ -26,17 +26,37 @@ Farstax Stacks                  Business/application catalogue that can
                                  no dependency on Stacks.
 ```
 
-See `Farstax/agent-bridge#703` for the pack mechanism design and
-`nickconstantinou/agent-bridge-platform#699` for how Stacks reference packs.
+## Installation
 
-## Installation status
+`Farstax/agent-bridge#703` has shipped. Agent Bridge fetches this
+repository's `catalogue.json` directly from
+`https://raw.githubusercontent.com/Farstax/agent-bridge-skills/main/catalogue.json`
+through its existing Skill manager:
 
-**Pending.** `Farstax/agent-bridge#703` — the pack install/update/remove
-mechanism — has not shipped yet. Every pack's `compatibility.status` is
-`pending` and `compatibility.agentBridge` is `null` until that mechanism
-lands and this repository's schema is reconciled with it.
+```bash
+# From an Agent Bridge checkout
+npm run skills -- packs list
+npm run skills -- packs show marketing
+npm run skills -- packs install marketing
+npm run skills -- packs install-skill marketing positioning
+npm run skills -- packs status
+npm run skills -- packs update marketing
+npm run skills -- packs remove marketing
+```
 
-Until then, this repository is developed and validated on its own:
+See `Farstax/agent-bridge`'s `docs/SKILL-PACKS.md` for the full command
+reference, installed-state layout, and update/removal semantics. Installing a
+pack never authorizes an external account, performs OAuth, supplies a secret,
+or grants spend/mutation authority — that remains owned by Agent Bridge's
+existing runtime/tool/account approval boundaries.
+
+`compatibility.minAgentBridgeVersion` is intentionally left unset in
+`catalogue.json` for now: the pack mechanism has merged to `main` in
+`Farstax/agent-bridge` but has not yet shipped in a tagged release. Once a
+release containing it is cut, this repository should pin
+`minAgentBridgeVersion` to that release.
+
+To develop or qualify changes to this repository itself:
 
 ```bash
 git clone https://github.com/Farstax/agent-bridge-skills.git
@@ -44,11 +64,6 @@ cd agent-bridge-skills
 python3 -m pip install -r tests/requirements.txt
 python3 tests/validate.py
 ```
-
-A Skill's `SKILL.md` can also be read and manually copied into a provider's
-Skill directory today; the pack manifest exists so that once #703 ships,
-installing the whole pack or a single Skill from it becomes a supported
-Agent Bridge operation with provenance preserved.
 
 ## Initial pack: `marketing`
 
@@ -89,10 +104,10 @@ authorized by the operator before any live-data feature is used.
 
 ## Provenance model
 
-Every Skill carries a `skill.yaml` next to its `SKILL.md` recording who wrote
-it, where it came from, the exact upstream revision (if any), its licence,
-what it depends on, what it can touch, and what approvals it needs. See
-`schemas/skill.schema.json` and `AGENTS.md`.
+Every Skill's metadata (who wrote it, exact upstream revision if any, licence,
+dependencies, capabilities, approvals) lives in `catalogue.json`, generated
+from `scripts/build-catalogue.mjs`. See `schemas/skill-pack.schema.json` and
+`AGENTS.md`.
 
 ## Contributing a pack or Skill
 
