@@ -68,6 +68,24 @@ function emptyDependencies() {
   return { requiredLocal: [], optionalLocal: [], externalServices: [], hostedMcps: [], requiredSecrets: [] };
 }
 
+// Derives the pack-level dependencies summary from its resolved Skills so the
+// pack manifest can't silently omit a dependency a Skill actually declares —
+// this is the exact drift class review already flagged once in this repo.
+function aggregateDependencies(resolvedSkills) {
+  const byName = (list) => {
+    const seen = new Map();
+    for (const item of list) if (!seen.has(item.name)) seen.set(item.name, item);
+    return [...seen.values()];
+  };
+  return {
+    requiredLocal: byName(resolvedSkills.flatMap((s) => s.dependencies.requiredLocal)),
+    optionalLocal: byName(resolvedSkills.flatMap((s) => s.dependencies.optionalLocal)),
+    externalServices: byName(resolvedSkills.flatMap((s) => s.dependencies.externalServices)),
+    hostedMcps: byName(resolvedSkills.flatMap((s) => s.dependencies.hostedMcps)),
+    requiredSecrets: byName(resolvedSkills.flatMap((s) => s.dependencies.requiredSecrets)),
+  };
+}
+
 function hostedMcp(name, purpose, url) {
   return { hostedMcps: [{ name: "NotFair", purpose, url, authorization: "OAuth" }], requiredLocal: [], optionalLocal: [], externalServices: [], requiredSecrets: [] };
 }
@@ -216,6 +234,7 @@ function buildPack(revision) {
   });
 
   const allEffects = [...new Set(resolvedSkills.flatMap((s) => s.capabilities.effects))];
+  const packDependencies = aggregateDependencies(resolvedSkills);
 
   return {
     id: "marketing",
@@ -228,7 +247,7 @@ function buildPack(revision) {
     capabilityTags: ["business:marketing", "business:growth"],
     attribution: [NOTFAIR_REPOSITORY, "https://github.com/nickconstantinou/antigravity-marketing"],
     compatibility: { apiVersion: 1, supportedHosts: HOSTS },
-    dependencies: emptyDependencies(),
+    dependencies: packDependencies,
     capabilities: {
       effects: allEffects,
       approval: "Individual Skill approval requirements apply (see each Skill's capabilities.approval). Installing this pack grants no external account access, OAuth authorization, secret value, or spend/mutation authority on its own.",
