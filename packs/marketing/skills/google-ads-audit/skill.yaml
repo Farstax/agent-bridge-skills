@@ -18,10 +18,7 @@ origin:
 attribution:
   notice: ../../NOTICE.md
 
-hosts:
-  - claude
-  - codex
-  - generic-agent-skills
+format: agent-skills
 
 capabilities:
   - paid-media

@@ -15,10 +15,7 @@ origin:
       deriving voice attributes from the brand's own material.
   modified: true
 
-hosts:
-  - claude
-  - codex
-  - generic-agent-skills
+format: agent-skills
 
 capabilities:
   - brand-voice

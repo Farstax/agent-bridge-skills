@@ -27,7 +27,12 @@ projects, and validates packs; this repository owns pack *content* only.
 1. **Metadata and provenance are mandatory.** Every Skill needs a `skill.yaml`
    next to its `SKILL.md` that validates against `schemas/skill.schema.json`.
    Every pack needs a `pack.yaml` that validates against
-   `schemas/pack.schema.json`.
+   `schemas/pack.schema.json`. `catalog.yaml` validates against
+   `schemas/catalog.schema.json`. Skill metadata is canonical: a pack's
+   `dependencies`, `secrets`, and `effects` are a derived summary and must
+   exactly match the union of what its member Skills declare — the validator
+   enforces this, so don't hand-edit `pack.yaml`'s aggregate fields without
+   updating the Skills (or vice versa).
 2. **No unattributed upstream imports.** A Skill copied or adapted from an
    external project must record `origin.type` (`adapted-upstream` or
    `vendored-upstream`), the exact upstream repository, path, and commit SHA,
@@ -58,8 +63,15 @@ projects, and validates packs; this repository owns pack *content* only.
    Do not hardcode a specific tool, provider, or vendor when the requirement
    is "evidence of X" or "capability to do Y."
 9. **Tests/evals are required for a meaningful change.** A new or materially
-   changed Skill needs at least one eval or check under its `evals/` and a
-   reference from `skill.yaml.evals` and the pack's `tests` list.
+   changed Skill needs at least one eval or check under its `evals/`,
+   referenced from that Skill's `skill.yaml.evals`. A pack's top-level
+   `tests` list points at pack-level validation/eval *runners* (for example
+   `tests/validate.py`) — it does not enumerate every individual Skill eval
+   file; those are discovered through each Skill's own `skill.yaml`.
+   Note the current limit: `tests/validate.py` checks that a declared eval
+   file exists and is well-formed, it does not execute evals against a model.
+   Treat a green `Validate` CI run as proof of schema/provenance/metadata
+   hygiene, not proof that a Skill produces good output.
 10. **Updating an upstream-derived Skill must refresh its recorded revision.**
     When you touch a Skill with `origin.type` of `adapted-upstream` or
     `vendored-upstream`, update `origin.upstream.commit` (if you re-pulled

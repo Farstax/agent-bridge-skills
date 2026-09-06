@@ -15,10 +15,7 @@ origin:
       generation instruction and the "chaotic-good founder" persona framing.
   modified: true
 
-hosts:
-  - claude
-  - codex
-  - generic-agent-skills
+format: agent-skills
 
 capabilities:
   - content-distribution

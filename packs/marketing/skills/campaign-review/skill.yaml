@@ -17,10 +17,7 @@ origin:
       and unranked idea dumps in favour of one recommended next experiment.
   modified: true
 
-hosts:
-  - claude
-  - codex
-  - generic-agent-skills
+format: agent-skills
 
 capabilities:
   - campaign-review
