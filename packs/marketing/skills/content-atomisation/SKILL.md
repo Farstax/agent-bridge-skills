@@ -57,4 +57,4 @@ say so rather than padding pieces with repeated content.
 No specific publishing or scheduling tool is required. This Skill drafts
 content only — it does not post, schedule, or publish to any platform.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

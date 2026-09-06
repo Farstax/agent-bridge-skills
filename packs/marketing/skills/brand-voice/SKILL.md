@@ -55,4 +55,4 @@ rather than defaulting to an invented persona.
 
 No external service required. Local reasoning over supplied material.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

@@ -5,8 +5,9 @@ description: Full technical and content SEO audit using live Google Search Conso
 
 # SEO Analysis
 
-Adapted from NotFair's `seo-analysis` Skill (see `skill.yaml` for exact
-provenance). Condensed to be self-contained and provider-neutral for this
+Adapted from NotFair's `seo-analysis` Skill (see this Skill's entry in the
+repository root `catalogue.json` for exact provenance). Condensed to be
+self-contained and provider-neutral for this
 pack; the upstream Skill has more depth. Route ongoing Search Console queries
 to `search-console` and ongoing GA4 queries to `google-analytics` in this
 pack; use this Skill for a full-site or full-page audit.
@@ -73,4 +74,4 @@ Optionally uses a Search Console connector (hosted MCP or direct Google API)
 and a page-speed API; both are external-read only. This Skill does not modify
 site content, submit sitemaps, or request indexing on its own.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

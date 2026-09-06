@@ -5,7 +5,7 @@ description: Build a dated content calendar from real Search Console demand data
 
 # Content Planner
 
-Adapted from NotFair's `content-planner` Skill (see `skill.yaml`). Distinct
+Adapted from NotFair's `content-planner` Skill (see this Skill's entry in the repository root `catalogue.json`). Distinct
 from `keyword-research`: this mines the site's *own* Search Console data for
 scheduling, rather than seed-driven topic discovery for a new area.
 
@@ -61,4 +61,4 @@ Requires a Search Console connector (hosted MCP or direct Google API);
 external-read only. Produces a calendar artifact only — it does not publish
 or schedule content itself.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

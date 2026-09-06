@@ -5,7 +5,7 @@ description: Seed-driven keyword discovery and prioritization by volume, competi
 
 # Keyword Research
 
-Adapted from NotFair's `keyword-research` Skill (see `skill.yaml`).
+Adapted from NotFair's `keyword-research` Skill (see this Skill's entry in the repository root `catalogue.json`).
 
 ## Job
 
@@ -59,4 +59,4 @@ figures as qualitative estimates rather than presenting them as precise data.
 Optionally uses a keyword-data API or connector; external-read only. Produces
 no external write.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

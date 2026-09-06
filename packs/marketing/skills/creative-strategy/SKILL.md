@@ -56,4 +56,4 @@ No specific image-generation or design tool is required — this Skill
 produces a brief for whatever design capability the environment has
 available. It does not itself generate or publish visual assets.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

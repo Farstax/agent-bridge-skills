@@ -5,7 +5,7 @@ description: Generative Engine Optimization — audit and rewrite content to be 
 
 # GEO Optimizer
 
-Adapted from NotFair's `geo-optimizer` Skill (see `skill.yaml`). Distinct from
+Adapted from NotFair's `geo-optimizer` Skill (see this Skill's entry in the repository root `catalogue.json`). Distinct from
 `seo-analysis`: this targets citation by generative answer engines, not
 traditional ranked search results.
 
@@ -66,4 +66,4 @@ of asserting an outcome.
 No external service is required for the structural audit; this Skill
 operates on supplied content. It does not publish changes on its own.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

@@ -57,4 +57,4 @@ rather than guessing at a position from assumption.
 No external service required. Local reasoning over supplied or
 previously-gathered research.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.

@@ -1,8 +1,9 @@
 # Marketing pack
 
 Strategy, acquisition, conversion, distribution, and measurement capabilities
-for a resident business agent. Version `0.1.0`, pending Agent Bridge Skill
-Pack support (`Farstax/agent-bridge#703`).
+for a resident business agent. Version `0.1.0`, installable through Agent
+Bridge's Skill Pack mechanism (`Farstax/agent-bridge#703`) — see the top-level
+`README.md` for install commands.
 
 ## Flow
 
@@ -73,7 +74,7 @@ from the old "Echo Loop" retrospective idea).
 NotFair-derived Skills are adapted from
 [`nowork-studio/notfair-plugin`](https://github.com/nowork-studio/notfair-plugin)
 at commit `daf87d3d4c985fa34ff7843aa570bc8c0d656ec2` (MIT licence, verified at
-that commit). See `NOTICE.md` and each Skill's `skill.yaml` for exact
+that commit). See `NOTICE.md` and each Skill's entry in the repository root `catalogue.json` for exact
 per-Skill provenance.
 
 ## Deliberate omissions (v0.1.0)
@@ -98,5 +99,5 @@ upstream project or this pack evolves.
 No Skill in this pack authorizes an external account on its own. Several
 Skills can optionally use NotFair's hosted MCP, or Google's own APIs, for live
 data — see `dependencies.externalServices` / `dependencies.mcp` in each
-Skill's `skill.yaml`. The operator must connect and authorize those services
+Skill's `dependencies` in `catalogue.json`. The operator must connect and authorize those services
 separately; installing this pack does not do it for them.

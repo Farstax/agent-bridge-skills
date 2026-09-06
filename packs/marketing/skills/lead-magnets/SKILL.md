@@ -55,4 +55,4 @@ generic asset.
 No external service required. This Skill produces a brief and, if asked,
 draft copy — it does not publish the asset or collect any opt-in data itself.
 
-See `skill.yaml` for machine-readable metadata.
+See this Skill's entry in the repository root `catalogue.json` for machine-readable metadata.
