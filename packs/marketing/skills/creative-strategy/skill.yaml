@@ -1,0 +1,41 @@
+schemaVersion: farstax.agent-bridge.skill/v1alpha1
+
+id: creative-strategy
+name: Creative Strategy
+description: Define visual and creative direction grounded in brand voice and audience.
+
+origin:
+  type: farstax-authored
+  priorSource:
+    repository: nickconstantinou/antigravity-marketing
+    path: .agent/skills/creative-strategist
+    note: >
+      Modernised from the "Creative Director" skill. Removed fixed named
+      aesthetic archetypes, universal color-psychology claims, and a fixed
+      banned-visuals list not grounded in the specific brand.
+  modified: true
+
+hosts:
+  - claude
+  - codex
+  - generic-agent-skills
+
+capabilities:
+  - creative-strategy
+
+dependencies:
+  local: []
+  externalServices: []
+  mcp: []
+
+secrets: []
+
+effects:
+  level: local-read-only
+  externalWrite: false
+  financialSpend: false
+
+approvals: []
+
+evals:
+  - evals/eval-1.md

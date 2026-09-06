@@ -1,0 +1,52 @@
+schemaVersion: farstax.agent-bridge.skill/v1alpha1
+
+id: keyword-research
+name: Keyword Research
+description: Seed-driven keyword discovery, clustering, and prioritization.
+
+origin:
+  type: adapted-upstream
+  upstream:
+    repository: https://github.com/nowork-studio/notfair-plugin
+    path: seo/keyword-research
+    commit: daf87d3d4c985fa34ff7843aa570bc8c0d656ec2
+    license: MIT
+  modified: true
+  importedAt: "2026-09-06"
+  lastUpstreamReview: "2026-09-06"
+
+attribution:
+  notice: ../../NOTICE.md
+
+hosts:
+  - claude
+  - codex
+  - generic-agent-skills
+
+capabilities:
+  - seo
+
+dependencies:
+  local: []
+  externalServices:
+    - id: keyword-data-provider
+      required: false
+      purpose: Precise search volume and difficulty figures.
+      authorization: api-key
+  mcp:
+    - id: notfair
+      required: false
+      purpose: Optional hosted connector for keyword data instead of a direct API credential.
+      hosted: true
+
+secrets: []
+
+effects:
+  level: external-read
+  externalWrite: false
+  financialSpend: false
+
+approvals: []
+
+evals:
+  - evals/eval-1.md

@@ -1,0 +1,45 @@
+schemaVersion: farstax.agent-bridge.skill/v1alpha1
+
+id: geo-optimizer
+name: GEO Optimizer
+description: Audit and restructure content for citability by AI answer engines.
+
+origin:
+  type: adapted-upstream
+  upstream:
+    repository: https://github.com/nowork-studio/notfair-plugin
+    path: seo/geo-optimizer
+    commit: daf87d3d4c985fa34ff7843aa570bc8c0d656ec2
+    license: MIT
+  modified: true
+  importedAt: "2026-09-06"
+  lastUpstreamReview: "2026-09-06"
+
+attribution:
+  notice: ../../NOTICE.md
+
+hosts:
+  - claude
+  - codex
+  - generic-agent-skills
+
+capabilities:
+  - geo
+
+dependencies:
+  local: []
+  externalServices: []
+  mcp: []
+
+secrets: []
+
+effects:
+  level: draft-proposed-write
+  externalWrite: false
+  financialSpend: false
+
+approvals:
+  - Operator reviews rewritten content before publishing.
+
+evals:
+  - evals/eval-1.md

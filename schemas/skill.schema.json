@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Farstax/agent-bridge-skills/schemas/skill.schema.json",
+  "title": "Farstax Agent Bridge Skill Pack — per-Skill metadata",
+  "description": "Draft v1alpha1 contract for skill.yaml, the machine-readable companion to each Skill's SKILL.md. Tracks Farstax/agent-bridge#703.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "description",
+    "origin",
+    "hosts",
+    "capabilities",
+    "dependencies",
+    "secrets",
+    "effects",
+    "approvals"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "farstax.agent-bridge.skill/v1alpha1"
+    },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]{1,63}$" },
+    "name": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "modified"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["farstax-authored", "adapted-upstream", "vendored-upstream"]
+        },
+        "upstream": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["repository", "path", "commit", "license"],
+          "properties": {
+            "repository": { "type": "string", "format": "uri" },
+            "path": { "type": "string", "minLength": 1 },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "license": { "type": "string", "minLength": 1 }
+          }
+        },
+        "priorSource": {
+          "description": "Optional historical provenance for a farstax-authored Skill modernised from earlier private material.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["repository", "path"],
+          "properties": {
+            "repository": { "type": "string" },
+            "path": { "type": "string" },
+            "note": { "type": "string" }
+          }
+        },
+        "modified": { "type": "boolean" },
+        "importedAt": { "type": "string", "format": "date" },
+        "lastUpstreamReview": { "type": "string", "format": "date" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "type": { "enum": ["adapted-upstream", "vendored-upstream"] } }
+          },
+          "then": { "required": ["upstream", "importedAt", "lastUpstreamReview"] }
+        }
+      ]
+    },
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "notice": { "type": "string" }
+      }
+    },
+    "hosts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "capabilities": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+      "minItems": 1
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["local", "externalServices", "mcp"],
+      "properties": {
+        "local": { "type": "array", "items": { "type": "string" } },
+        "externalServices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "required", "purpose", "authorization"],
+            "properties": {
+              "id": { "type": "string" },
+              "required": { "type": "boolean" },
+              "purpose": { "type": "string" },
+              "authorization": {
+                "type": "string",
+                "enum": ["oauth", "api-key", "none"]
+              },
+              "dataCategories": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "docs": { "type": "string", "format": "uri" }
+            }
+          }
+        },
+        "mcp": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "required", "purpose"],
+            "properties": {
+              "id": { "type": "string" },
+              "required": { "type": "boolean" },
+              "purpose": { "type": "string" },
+              "hosted": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "secrets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "required", "purpose"],
+        "properties": {
+          "name": { "type": "string" },
+          "required": { "type": "boolean" },
+          "purpose": { "type": "string" }
+        }
+      }
+    },
+    "effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "externalWrite", "financialSpend"],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "local-read-only",
+            "external-read",
+            "draft-proposed-write",
+            "external-write",
+            "spend-affecting-write"
+          ]
+        },
+        "externalWrite": { "type": "boolean" },
+        "financialSpend": { "type": "boolean" }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evals": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
