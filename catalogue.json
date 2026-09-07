@@ -24,7 +24,7 @@
       ],
       "compatibility": {
         "apiVersion": 1,
-        "minAgentBridgeVersion": "2026.9.6-2",
+        "minAgentBridgeVersion": "2026.9.7-2",
         "supportedHosts": [
           "codex",
           "claude",
