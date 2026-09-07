@@ -47,8 +47,8 @@ npm run skills -- packs remove marketing
 See `Farstax/agent-bridge`'s `docs/SKILL-PACKS.md` for the full command
 reference, installed-state layout, and update/removal semantics. Installing a
 pack never authorizes an external account, performs OAuth, supplies a secret,
-or grants spend/mutation authority — that remains owned by Agent Bridge's
-existing runtime/tool/account approval boundaries.
+or grants spend/mutation authority. The workspace owner and connected
+tool/account permissions, budgets, and native controls remain authoritative.
 
 `compatibility.minAgentBridgeVersion` is intentionally left unset in
 `catalogue.json` for now: the pack mechanism has merged to `main` in
@@ -93,14 +93,15 @@ The pack combines two complementary sources:
 - **NotFair-derived** operational SEO/GEO/analytics/paid-media Skills,
   selected from [`nowork-studio/notfair-plugin`](https://github.com/nowork-studio/notfair-plugin)
   (MIT licence) where it has stronger current, evidence-led operational
-  knowledge than a competing Farstax version would. Only audit/analysis
-  Skills are included in this initial release — see
-  `packs/marketing/README.md` for what was deliberately left out and why.
+  knowledge than a competing Farstax version would. The pack includes both
+  read-only analysis and a small curated write-capable layer for Google Ads
+  and Meta Ads; see `packs/marketing/README.md` for the exact boundary.
 
 No Skill Pack install grants permission to spend money, publish content, send
 messages, or mutate a third-party account. External services (including
 NotFair's hosted MCP) are declared per-Skill and must be explicitly
-authorized by the operator before any live-data feature is used.
+authorized by the workspace owner before any live-data or mutation capability
+is available.
 
 ## Provenance model
 
