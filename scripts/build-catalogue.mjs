@@ -261,7 +261,7 @@ function buildPack(revision) {
     categories: ["marketing", "growth"],
     capabilityTags: ["business:marketing", "business:growth"],
     attribution: [NOTFAIR_REPOSITORY, "https://github.com/nickconstantinou/antigravity-marketing"],
-    compatibility: { apiVersion: 1, supportedHosts: HOSTS },
+    compatibility: { apiVersion: 1, minAgentBridgeVersion: "2026.9.6-2", supportedHosts: HOSTS },
     dependencies: packDependencies,
     capabilities: {
       effects: allEffects,
