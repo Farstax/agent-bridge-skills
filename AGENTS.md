@@ -74,9 +74,9 @@ review process flagged and fixed once already. Metadata lives once, in
 2. **No unattributed upstream imports.** A Skill copied or adapted from an
    external project must record `provenance.origin` (`adapted-upstream` or
    `vendored-upstream`), the exact upstream repository, revision, and SPDX
-   licence, and a notice path + SHA-256. Never claim `farstax-authored` for
-   adapted third-party work — the schema fails closed on this (a
-   `farstax-authored` Skill cannot declare any upstream field).
+   licence, and a notice path + SHA-256. Never claim `author-created` for
+   adapted third-party work — the schema fails closed on this (an
+   `author-created` Skill cannot declare any upstream field).
 3. **Verify upstream licences and revisions yourself.** Do not trust a prior
    PR's claim about an upstream licence — re-check the licence file at the
    exact commit you are importing.
