@@ -1,7 +1,7 @@
 # Marketing pack
 
 Strategy, acquisition, conversion, distribution, and measurement capabilities
-for a resident business agent. Version `0.1.0`, installable through Agent
+for a resident business agent. Version `0.2.0`, installable through Agent
 Bridge's Skill Pack mechanism (`Farstax/agent-bridge#703`) — see the top-level
 `README.md` for install commands.
 
@@ -16,7 +16,7 @@ Offer
   ↓
 Brand / creative direction
   ↓
-Acquisition ── SEO / GEO · content ideas · paid media audit
+Acquisition ── SEO / GEO · content ideas · paid media audit + operation
   ↓
 Conversion ── landing-page copy · lead magnets · email sequences
   ↓
@@ -49,7 +49,9 @@ Campaign review → next hypothesis
 | `search-console` | NotFair-derived | Query live Google Search Console performance and indexing data. |
 | `google-analytics` | NotFair-derived | Query live GA4 traffic, acquisition, and conversion data. |
 | `google-ads-audit` | NotFair-derived | Read-only Google Ads account health audit. |
+| `google-ads-manage` | NotFair-derived | Operate an already-authorized Google Ads account, including supported bid, budget, targeting and campaign mutations. |
 | `meta-ads-audit` | NotFair-derived | Read-only Meta (Facebook/Instagram) Ads account health audit. |
+| `meta-ads-manage` | NotFair-derived | Operate an already-authorized Meta Ads account, including supported budget, delivery and campaign mutations. |
 | `paid-ads-review` | NotFair-derived | Read-only cross-channel paid-media performance review. |
 
 ## Provenance
@@ -77,27 +79,30 @@ at commit `daf87d3d4c985fa34ff7843aa570bc8c0d656ec2` (MIT licence, verified at
 that commit). See `NOTICE.md` and each Skill's entry in the repository root `catalogue.json` for exact
 per-Skill provenance.
 
-## Deliberate omissions (v0.1.0)
+## Write-capable scope (v0.2.0)
 
-NotFair ships 45 Skills across SEO, GEO, paid media, and analytics, including
-account-mutating and campaign-launch Skills (`google-ads` operate/copy/assets,
-`meta-ads-creative`, `paid-ads-optimize`, `paid-ads-launch`, `paid-ads-setup`,
-platform Skills for TikTok/X/LinkedIn/Amazon/ChatGPT Ads). This pack imports
-only the **read-only audit and analysis** layer for v0.1.0 — nothing here can
-change a live ad account, budget, or published page. Write-capable NotFair
-Skills are deliberately left out until this pack has explicit
-`spend-affecting-write` approval metadata and a real operator approval flow to
-attach to them, rather than importing mutation capability with a metadata
-schema that has not been exercised yet.
+Version 0.2 adds the two smallest operational extensions to the existing ad
+audits: `google-ads-manage` and `meta-ads-manage`. They can perform supported
+live mutations, including spend-affecting changes, **only through authority
+already granted by the workspace owner and connected account/tool**.
 
-Each of these Skills was individually reviewed against the current NotFair
-tree rather than assumed from a fixed list; the selection may change as the
-upstream project or this pack evolves.
+Installing the pack does not authorize an ad account, widen OAuth scope,
+change an account role, create a budget, or add a Farstax-specific spend
+approval system. Account permissions, configured budgets/limits, and native
+tool/service controls remain authoritative. If a requested write is denied or
+unavailable, these Skills stop and return the exact proposed change rather
+than trying to obtain or bypass broader authority.
+
+The pack still deliberately omits NotFair's broader mutation surface — for
+example paid-ad launch/setup/creative Skills and additional ad platforms —
+until there is a concrete use case that justifies adding them. The goal is a
+curated operational set, not a mirror of every upstream Skill.
 
 ## External services
 
 No Skill in this pack authorizes an external account on its own. Several
 Skills can optionally use NotFair's hosted MCP, or Google's own APIs, for live
-data — see `dependencies.externalServices` / `dependencies.mcp` in each
-Skill's `dependencies` in `catalogue.json`. The operator must connect and authorize those services
-separately; installing this pack does not do it for them.
+data and supported writes — see `dependencies.externalServices` /
+`dependencies.hostedMcps` in each Skill's `dependencies` in `catalogue.json`.
+The operator must connect and authorize those services separately; installing
+this pack does not do it for them.
