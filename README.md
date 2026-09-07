@@ -50,11 +50,10 @@ pack never authorizes an external account, performs OAuth, supplies a secret,
 or grants spend/mutation authority. The workspace owner and connected
 tool/account permissions, budgets, and native controls remain authoritative.
 
-`compatibility.minAgentBridgeVersion` is intentionally left unset in
-`catalogue.json` for now: the pack mechanism has merged to `main` in
-`Farstax/agent-bridge` but has not yet shipped in a tagged release. Once a
-release containing it is cut, this repository should pin
-`minAgentBridgeVersion` to that release.
+The Marketing pack currently requires Agent Bridge `2026.9.6-2` or newer via
+`compatibility.minAgentBridgeVersion`. Keep that pin aligned with the oldest
+released Agent Bridge version that implements the catalogue contract the pack
+uses.
 
 To develop or qualify changes to this repository itself:
 
