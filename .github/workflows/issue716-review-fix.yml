@@ -1,0 +1,50 @@
+name: Issue 716 review fix
+
+on:
+  push:
+    branches: [fix/716-post-stamp-minimum]
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/716-post-stamp-minimum
+          fetch-depth: 0
+      - name: Correct compatibility floor and regenerate catalogue
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('scripts/build-catalogue.mjs')
+          s = p.read_text()
+          old = 'minAgentBridgeVersion: "2026.9.6-2"'
+          new = 'minAgentBridgeVersion: "2026.9.7-2"'
+          if s.count(old) != 1:
+              raise SystemExit(f'expected exactly one old compatibility floor, found {s.count(old)}')
+          p.write_text(s.replace(old, new))
+          PY
+          git add scripts/build-catalogue.mjs
+          git commit -m "fix: exclude pre-identity Agent Bridge releases"
+          git push origin HEAD:fix/716-post-stamp-minimum
+
+          revision="$(jq -r '.packs[0].skills[0].content.revision' catalogue.json)"
+          test "$revision" != "null"
+          node scripts/build-catalogue.mjs --revision "$revision"
+          python3 -m pip install -q -r tests/requirements.txt
+          python3 tests/validate.py
+          git add catalogue.json
+          git commit -m "chore: publish corrected compatibility floor"
+          git push origin HEAD:fix/716-post-stamp-minimum
+
+          git rm .github/workflows/issue716-review-fix.yml
+          git commit -m "chore: remove issue 716 review helper"
+          git push origin HEAD:fix/716-post-stamp-minimum
