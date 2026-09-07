@@ -37,7 +37,7 @@ function farstaxSkill({ id, description, effects, approval, tests }) {
     capabilities: { effects, approval },
     tests,
     provenance: {
-      origin: "farstax-authored",
+      origin: "author-created",
       modifiedFromUpstream: false,
       lastReviewed: "2026-09-06",
     },
@@ -235,7 +235,7 @@ function buildPack(revision) {
 
   const resolvedSkills = skills.map(({ _upstreamPath, ...skill }) => {
     const dir = join(repoRoot, "packs", "marketing", "skills", skill.id);
-    const provenance = skill.provenance.origin === "farstax-authored"
+    const provenance = skill.provenance.origin === "author-created"
       ? skill.provenance
       : { ...skill.provenance, noticeSha256 };
     return {
