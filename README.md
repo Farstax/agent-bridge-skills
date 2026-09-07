@@ -50,10 +50,14 @@ pack never authorizes an external account, performs OAuth, supplies a secret,
 or grants spend/mutation authority. The workspace owner and connected
 tool/account permissions, budgets, and native controls remain authoritative.
 
-The Marketing pack currently requires Agent Bridge `2026.9.6-2` or newer via
-`compatibility.minAgentBridgeVersion`. Keep that pin aligned with the oldest
-released Agent Bridge version that implements the catalogue contract the pack
-uses.
+The Marketing pack currently requires Agent Bridge `2026.9.7-2` or newer via
+`compatibility.minAgentBridgeVersion` (see `Farstax/agent-bridge-skills#8` /
+`Farstax/agent-bridge#716` for why the floor isn't `2026.9.6-2`: neither
+`release-2026.09.06-2` nor `release-2026.09.07-1` can identify as their
+tag-derived version, since both predate compatibility stamping). Keep this
+pin aligned with `catalogue.json`'s actual `compatibility.minAgentBridgeVersion`
+— it is the oldest released Agent Bridge version that implements the
+catalogue contract the pack uses.
 
 To develop or qualify changes to this repository itself:
 
