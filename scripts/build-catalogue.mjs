@@ -21,6 +21,7 @@ const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const REPOSITORY = "https://github.com/Farstax/agent-bridge-skills";
 const NOTFAIR_COMMIT = "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2";
 const NOTFAIR_REPOSITORY = "https://github.com/nowork-studio/notfair-plugin";
+const NOTFAIR_MCP = "https://notfair.co/api/mcp/notfair";
 const HOSTS = ["codex", "claude", "agy"];
 
 function fileSha256(path) {
@@ -75,19 +76,25 @@ function aggregateDependencies(resolvedSkills) {
   const byName = (list) => {
     const seen = new Map();
     for (const item of list) if (!seen.has(item.name)) seen.set(item.name, item);
-    return [...seen.values()];
+    return [...seen.values()].map((item) => ({ ...item }));
   };
+  const hostedMcps = byName(resolvedSkills.flatMap((s) => s.dependencies.hostedMcps));
+  for (const mcp of hostedMcps) {
+    if (mcp.name === "NotFair") {
+      mcp.purpose = "Optional hosted connector for authorized Search Console, Analytics, and ad-platform reads/writes used by member Skills.";
+    }
+  }
   return {
     requiredLocal: byName(resolvedSkills.flatMap((s) => s.dependencies.requiredLocal)),
     optionalLocal: byName(resolvedSkills.flatMap((s) => s.dependencies.optionalLocal)),
     externalServices: byName(resolvedSkills.flatMap((s) => s.dependencies.externalServices)),
-    hostedMcps: byName(resolvedSkills.flatMap((s) => s.dependencies.hostedMcps)),
+    hostedMcps,
     requiredSecrets: byName(resolvedSkills.flatMap((s) => s.dependencies.requiredSecrets)),
   };
 }
 
-function hostedMcp(name, purpose, url) {
-  return { hostedMcps: [{ name: "NotFair", purpose, url, authorization: "OAuth" }], requiredLocal: [], optionalLocal: [], externalServices: [], requiredSecrets: [] };
+function hostedMcp(name, purpose) {
+  return { hostedMcps: [{ name: "NotFair", purpose, url: NOTFAIR_MCP, authorization: "OAuth" }], requiredLocal: [], optionalLocal: [], externalServices: [], requiredSecrets: [] };
 }
 
 const NO_MUTATION_APPROVAL = "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses.";
