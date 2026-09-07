@@ -49,7 +49,9 @@ last upstream review date are recorded in each Skill's entry in the repository r
 | `search-console` | `analytics/search-console` |
 | `google-analytics` | `analytics/google-analytics` |
 | `google-ads-audit` | `google-ads/audit` |
+| `google-ads-manage` | `google-ads/manage` |
 | `meta-ads-audit` | `meta-ads/audit` |
+| `meta-ads-manage` | `meta-ads/manage` |
 | `paid-ads-review` | `paid-ads/paid-ads-review` |
 
 All other Skills in this pack are Farstax-authored. See `README.md` for their
