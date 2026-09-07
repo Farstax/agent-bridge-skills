@@ -43,7 +43,7 @@ function farstaxSkill({ id, description, effects, approval, tests }) {
   };
 }
 
-function notfairSkill({ id, description, effects, approval, tests, upstreamPath, dependencies }) {
+function notfairSkill({ id, description, effects, approval, tests, upstreamPath, dependencies, lastReviewed = "2026-09-06" }) {
   return {
     id,
     description,
@@ -57,7 +57,7 @@ function notfairSkill({ id, description, effects, approval, tests, upstreamPath,
       upstreamRevision: NOTFAIR_COMMIT,
       upstreamLicense: "MIT",
       noticePath: "packs/marketing/NOTICE.md",
-      lastReviewed: "2026-09-06",
+      lastReviewed,
       modifiedFromUpstream: true,
     },
     _upstreamPath: upstreamPath,
@@ -92,6 +92,7 @@ function hostedMcp(name, purpose, url) {
 
 const NO_MUTATION_APPROVAL = "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses.";
 const DRAFT_APPROVAL = (what) => `Operator reviews and confirms ${what} before it is published or sent anywhere.`;
+const EXISTING_AUTHORITY_APPROVAL = "No Farstax-specific approval. Execute only within authority already granted by the workspace owner and connected account/tool, and respect any native approval or budget controls. If a write is denied or unavailable, do not bypass it; return the proposed change instead.";
 
 const skills = [
   // Farstax-authored: strategy, offer, brand, conversion, distribution, review
@@ -151,7 +152,7 @@ const skills = [
     tests: ["packs/marketing/skills/campaign-review/evals/eval-1.md"],
   }),
 
-  // NotFair-derived: read-only SEO/GEO/analytics/paid-media audit layer
+  // NotFair-derived: SEO/GEO/analytics/paid-media audit and selected operations
   notfairSkill({
     id: "seo-analysis", description: "Full technical and content SEO audit using live Search Console and page-performance data.",
     effects: ["external-read"], approval: NO_MUTATION_APPROVAL, upstreamPath: "seo/seo-analysis",
@@ -194,10 +195,24 @@ const skills = [
     dependencies: hostedMcp("google-ads", "Optional hosted connector for Google Ads access instead of a direct API credential.", NOTFAIR_REPOSITORY),
   }),
   notfairSkill({
+    id: "google-ads-manage", description: "Operate an already-authorized Google Ads account using live evidence, including supported bid, budget, targeting, keyword and campaign mutations.",
+    effects: ["external-read", "external-write", "spend-mutation"], approval: EXISTING_AUTHORITY_APPROVAL, upstreamPath: "google-ads/manage",
+    tests: ["packs/marketing/skills/google-ads-manage/evals/eval-1.md"],
+    dependencies: hostedMcp("google-ads", "Optional hosted connector for authorized Google Ads reads and supported mutations instead of a direct API credential.", NOTFAIR_REPOSITORY),
+    lastReviewed: "2026-09-07",
+  }),
+  notfairSkill({
     id: "meta-ads-audit", description: "Read-only Meta (Facebook + Instagram) Ads account health audit and business-context capture.",
     effects: ["external-read"], approval: NO_MUTATION_APPROVAL, upstreamPath: "meta-ads/audit",
     tests: ["packs/marketing/skills/meta-ads-audit/evals/eval-1.md"],
     dependencies: hostedMcp("meta-ads", "Optional hosted connector for Meta Ads access instead of a direct API credential.", NOTFAIR_REPOSITORY),
+  }),
+  notfairSkill({
+    id: "meta-ads-manage", description: "Operate an already-authorized Meta Ads account using live evidence, including supported budget, delivery, targeting and campaign mutations.",
+    effects: ["external-read", "external-write", "spend-mutation"], approval: EXISTING_AUTHORITY_APPROVAL, upstreamPath: "meta-ads/manage",
+    tests: ["packs/marketing/skills/meta-ads-manage/evals/eval-1.md"],
+    dependencies: hostedMcp("meta-ads", "Optional hosted connector for authorized Meta Ads reads and supported mutations instead of a direct API credential.", NOTFAIR_REPOSITORY),
+    lastReviewed: "2026-09-07",
   }),
   notfairSkill({
     id: "paid-ads-review", description: "Read-only, evidence-based cross-channel paid-media performance review.",
@@ -240,7 +255,7 @@ function buildPack(revision) {
     id: "marketing",
     displayName: "Marketing",
     description: "Strategy, acquisition, conversion, distribution and marketing measurement capabilities for a resident business agent.",
-    version: "0.1.0",
+    version: "0.2.0",
     maintainer: "Farstax",
     license: "MIT",
     categories: ["marketing", "growth"],
@@ -250,7 +265,7 @@ function buildPack(revision) {
     dependencies: packDependencies,
     capabilities: {
       effects: allEffects,
-      approval: "Individual Skill approval requirements apply (see each Skill's capabilities.approval). Installing this pack grants no external account access, OAuth authorization, secret value, or spend/mutation authority on its own.",
+      approval: "Individual Skill authority/approval requirements apply (see each Skill's capabilities.approval). Installing this pack grants no external account access, OAuth authorization, secret value, or spend/mutation authority; workspace-owner and connected tool/account controls remain authoritative.",
     },
     tests: ["tests/validate.py"],
     skills: resolvedSkills,
@@ -275,7 +290,7 @@ function main() {
   const catalogue = {
     schemaVersion: 1,
     catalogueId: "farstax-agent-bridge-skills",
-    catalogueVersion: "1.0.0",
+    catalogueVersion: "1.1.0",
     packs: [buildPack(revision)],
   };
   writeFileSync(out, `${JSON.stringify(catalogue, null, 2)}\n`);
