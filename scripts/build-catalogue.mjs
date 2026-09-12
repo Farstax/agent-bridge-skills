@@ -279,6 +279,64 @@ function buildPack(revision) {
   };
 }
 
+const buildSkills = [
+  {
+    id: "parallel-work",
+    description: "Turn independent scopes into safe provider-native parallel work with mutation isolation, independent verification, and deterministic reconciliation.",
+    supportedHosts: HOSTS,
+    dependencies: emptyDependencies(),
+    capabilities: {
+      effects: ["local-read", "draft-write"],
+      approval: "No additional authority. Each worker remains bound by the same user, repository, runtime, tool, and approval boundaries as the root Run.",
+    },
+    tests: ["packs/build/skills/parallel-work/evals/eval-1.md"],
+    provenance: {
+      origin: "author-created",
+      modifiedFromUpstream: false,
+      lastReviewed: "2026-09-12",
+    },
+  },
+];
+
+function buildBuildPack(revision) {
+  const resolvedSkills = buildSkills.map((skill) => ({
+    id: skill.id,
+    description: skill.description,
+    content: {
+      repository: REPOSITORY,
+      revision,
+      path: `packs/build/skills/${skill.id}`,
+      sha256: hashSkillPackDirectorySha256(join(repoRoot, "packs", "build", "skills", skill.id)),
+    },
+    provenance: skill.provenance,
+    supportedHosts: skill.supportedHosts,
+    dependencies: skill.dependencies,
+    capabilities: skill.capabilities,
+    tests: skill.tests,
+  }));
+  const allEffects = [...new Set(resolvedSkills.flatMap((s) => s.capabilities.effects))];
+
+  return {
+    id: "build",
+    displayName: "Build",
+    description: "Provider-neutral engineering methods for substantial implementation, audit, and codebase work.",
+    version: "0.1.0",
+    maintainer: "Farstax",
+    license: "MIT",
+    categories: ["engineering", "development"],
+    capabilityTags: ["engineering:parallelism", "engineering:agent-workflow"],
+    attribution: [REPOSITORY],
+    compatibility: { apiVersion: 1, minAgentBridgeVersion: "2026.9.7-2", supportedHosts: HOSTS },
+    dependencies: aggregateDependencies(resolvedSkills),
+    capabilities: {
+      effects: allEffects,
+      approval: "Individual Skill authority applies. Installing this pack grants no additional repository, tool, external-action, or approval authority.",
+    },
+    tests: ["tests/validate.py"],
+    skills: resolvedSkills,
+  };
+}
+
 function main() {
   const args = process.argv.slice(2);
   const revisionIndex = args.indexOf("--revision");
@@ -297,8 +355,8 @@ function main() {
   const catalogue = {
     schemaVersion: 1,
     catalogueId: "farstax-agent-bridge-skills",
-    catalogueVersion: "1.1.0",
-    packs: [buildPack(revision)],
+    catalogueVersion: "1.2.0",
+    packs: [buildPack(revision), buildBuildPack(revision)],
   };
   writeFileSync(out, `${JSON.stringify(catalogue, null, 2)}\n`);
   console.log(`Wrote ${out} pinned to revision ${revision}`);

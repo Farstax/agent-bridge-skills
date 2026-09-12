@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "catalogueId": "farstax-agent-bridge-skills",
-  "catalogueVersion": "1.1.0",
+  "catalogueVersion": "1.2.0",
   "packs": [
     {
       "id": "marketing",
@@ -287,6 +287,90 @@
           "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for cross-channel ad-platform data instead of direct API credentials.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
           "capabilities": {"effects": ["external-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
           "tests": ["packs/marketing/skills/paid-ads-review/evals/eval-1.md"]
+        }
+      ]
+    },
+    {
+      "id": "build",
+      "displayName": "Build",
+      "description": "Provider-neutral engineering methods for substantial implementation, audit, and codebase work.",
+      "version": "0.1.0",
+      "maintainer": "Farstax",
+      "license": "MIT",
+      "categories": [
+        "engineering",
+        "development"
+      ],
+      "capabilityTags": [
+        "engineering:parallelism",
+        "engineering:agent-workflow"
+      ],
+      "attribution": [
+        "https://github.com/Farstax/agent-bridge-skills"
+      ],
+      "compatibility": {
+        "apiVersion": 1,
+        "minAgentBridgeVersion": "2026.9.7-2",
+        "supportedHosts": [
+          "codex",
+          "claude",
+          "agy"
+        ]
+      },
+      "dependencies": {
+        "requiredLocal": [],
+        "optionalLocal": [],
+        "externalServices": [],
+        "hostedMcps": [],
+        "requiredSecrets": []
+      },
+      "capabilities": {
+        "effects": [
+          "local-read",
+          "draft-write"
+        ],
+        "approval": "Individual Skill authority applies. Installing this pack grants no additional repository, tool, external-action, or approval authority."
+      },
+      "tests": [
+        "tests/validate.py"
+      ],
+      "skills": [
+        {
+          "id": "parallel-work",
+          "description": "Turn independent scopes into safe provider-native parallel work with mutation isolation, independent verification, and deterministic reconciliation.",
+          "content": {
+            "repository": "https://github.com/Farstax/agent-bridge-skills",
+            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
+            "path": "packs/build/skills/parallel-work",
+            "sha256": "fe52ed6ce8947571a8fa4a5f4e304f1f0d9b5a4b20f60c0dfcf7dac3a82f754c"
+          },
+          "provenance": {
+            "origin": "author-created",
+            "modifiedFromUpstream": false,
+            "lastReviewed": "2026-09-12"
+          },
+          "supportedHosts": [
+            "codex",
+            "claude",
+            "agy"
+          ],
+          "dependencies": {
+            "requiredLocal": [],
+            "optionalLocal": [],
+            "externalServices": [],
+            "hostedMcps": [],
+            "requiredSecrets": []
+          },
+          "capabilities": {
+            "effects": [
+              "local-read",
+              "draft-write"
+            ],
+            "approval": "No additional authority. Each worker remains bound by the same user, repository, runtime, tool, and approval boundaries as the root Run."
+          },
+          "tests": [
+            "packs/build/skills/parallel-work/evals/eval-1.md"
+          ]
         }
       ]
     }
