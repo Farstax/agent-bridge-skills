@@ -68,7 +68,13 @@ python3 -m pip install -r tests/requirements.txt
 python3 tests/validate.py
 ```
 
-## Initial pack: `marketing`
+## Packs
+
+### `build`
+
+Provider-neutral engineering methods for substantial agent work. The first Skill, `parallel-work`, turns genuinely independent scopes into safe provider-native fan-out while keeping dependent or conflicting mutation sequential. See `packs/build/README.md`.
+
+### `marketing`
 
 Strategy, acquisition, conversion, distribution, and measurement capabilities
 for a resident business agent. See `packs/marketing/README.md` for the full
