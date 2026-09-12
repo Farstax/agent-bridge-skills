@@ -64,7 +64,7 @@
           "description": "Turn public signal into named pain points, demand evidence, and a competitive gap.",
           "content": {
             "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
+            "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0",
             "path": "packs/marketing/skills/market-research",
             "sha256": "65f07540e104c5c5e0a9a06f931b6ba2ad2c8e38d4ce4e9d7a11651397a312fb"
           },
@@ -73,912 +73,220 @@
             "modifiedFromUpstream": false,
             "lastReviewed": "2026-09-06"
           },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/market-research/evals/eval-1.md"
-          ]
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/market-research/evals/eval-1.md"]
         },
         {
           "id": "positioning",
           "description": "Define a defensible market position and the angle that makes it obvious.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/positioning",
-            "sha256": "09d88bc0814a4173f22e8245e4fb88bd0b1517d484401c34cf58668c0fc6a467"
-          },
-          "provenance": {
-            "origin": "author-created",
-            "modifiedFromUpstream": false,
-            "lastReviewed": "2026-09-06"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "local-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/positioning/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/positioning", "sha256": "09d88bc0814a4173f22e8245e4fb88bd0b1517d484401c34cf58668c0fc6a467"},
+          "provenance": {"origin": "author-created", "modifiedFromUpstream": false, "lastReviewed": "2026-09-06"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["local-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/positioning/evals/eval-1.md"]
         },
         {
           "id": "offer-design",
           "description": "Design a specific, priced offer with real risk reversal.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/offer-design",
-            "sha256": "157091323847e7220f2d3b0551d4c991c0720ed9de5bc7a5f9f09a47eb42c702"
-          },
-          "provenance": {
-            "origin": "author-created",
-            "modifiedFromUpstream": false,
-            "lastReviewed": "2026-09-06"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "draft-write"
-            ],
-            "approval": "Operator reviews and confirms the price, guarantee, and bonus terms before it is published or sent anywhere."
-          },
-          "tests": [
-            "packs/marketing/skills/offer-design/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/offer-design", "sha256": "157091323847e7220f2d3b0551d4c991c0720ed9de5bc7a5f9f09a47eb42c702"},
+          "provenance": {"origin": "author-created", "modifiedFromUpstream": false, "lastReviewed": "2026-09-06"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["draft-write"], "approval": "Operator reviews and confirms the price, guarantee, and bonus terms before it is published or sent anywhere."},
+          "tests": ["packs/marketing/skills/offer-design/evals/eval-1.md"]
         },
         {
           "id": "brand-voice",
           "description": "Define one consistent, human brand voice as a filter for other writing Skills.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/brand-voice",
-            "sha256": "29567e2fba1e4997a5dbbe21ab82cfcc6a2420ec798ac9a847d4ec602a8734b3"
-          },
-          "provenance": {
-            "origin": "author-created",
-            "modifiedFromUpstream": false,
-            "lastReviewed": "2026-09-06"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "local-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/brand-voice/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/brand-voice", "sha256": "29567e2fba1e4997a5dbbe21ab82cfcc6a2420ec798ac9a847d4ec602a8734b3"},
+          "provenance": {"origin": "author-created", "modifiedFromUpstream": false, "lastReviewed": "2026-09-06"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["local-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/brand-voice/evals/eval-1.md"]
         },
         {
           "id": "creative-strategy",
           "description": "Define visual and creative direction grounded in brand voice and audience.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/creative-strategy",
-            "sha256": "a1cdea4e89c271f57afaf4833032a66a2c3118aa6a6fcc3b54ae3bfcfe68e53b"
-          },
-          "provenance": {
-            "origin": "author-created",
-            "modifiedFromUpstream": false,
-            "lastReviewed": "2026-09-06"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "local-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/creative-strategy/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/creative-strategy", "sha256": "a1cdea4e89c271f57afaf4833032a66a2c3118aa6a6fcc3b54ae3bfcfe68e53b"},
+          "provenance": {"origin": "author-created", "modifiedFromUpstream": false, "lastReviewed": "2026-09-06"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["local-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/creative-strategy/evals/eval-1.md"]
         },
         {
           "id": "lead-magnets",
           "description": "Design a narrow, high-value free asset that leads to the core offer.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/lead-magnets",
-            "sha256": "ee971c010ffb410709de843fc3095471a6b7fdc510d5925c46712e6a1f22f002"
-          },
-          "provenance": {
-            "origin": "author-created",
-            "modifiedFromUpstream": false,
-            "lastReviewed": "2026-09-06"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "draft-write"
-            ],
-            "approval": "Operator reviews and confirms the drafted asset and landing copy before it is published or sent anywhere."
-          },
-          "tests": [
-            "packs/marketing/skills/lead-magnets/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/lead-magnets", "sha256": "ee971c010ffb410709de843fc3095471a6b7fdc510d5925c46712e6a1f22f002"},
+          "provenance": {"origin": "author-created", "modifiedFromUpstream": false, "lastReviewed": "2026-09-06"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["draft-write"], "approval": "Operator reviews and confirms the drafted asset and landing copy before it is published or sent anywhere."},
+          "tests": ["packs/marketing/skills/lead-magnets/evals/eval-1.md"]
         },
         {
           "id": "conversion-copy",
           "description": "Write evidence-led landing-page and direct-response copy grounded in the offer and brand voice.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/conversion-copy",
-            "sha256": "93cb36a7f34d2360454c14552d097ec3688b6fa9f0b8fa3548897440e810b6d7"
-          },
-          "provenance": {
-            "origin": "author-created",
-            "modifiedFromUpstream": false,
-            "lastReviewed": "2026-09-06"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "draft-write"
-            ],
-            "approval": "Operator reviews and confirms all factual claims, pricing, and guarantees before it is published or sent anywhere."
-          },
-          "tests": [
-            "packs/marketing/skills/conversion-copy/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/conversion-copy", "sha256": "93cb36a7f34d2360454c14552d097ec3688b6fa9f0b8fa3548897440e810b6d7"},
+          "provenance": {"origin": "author-created", "modifiedFromUpstream": false, "lastReviewed": "2026-09-06"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["draft-write"], "approval": "Operator reviews and confirms all factual claims, pricing, and guarantees before it is published or sent anywhere."},
+          "tests": ["packs/marketing/skills/conversion-copy/evals/eval-1.md"]
         },
         {
           "id": "email-sequences",
           "description": "Design welcome, nurture, launch, and recovery email sequences without manufactured pressure.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/email-sequences",
-            "sha256": "9a08f48d7c5aaa9b520495cbc0281848bd7fd5d87acccc19e03a4fdecb5d0a5b"
-          },
-          "provenance": {
-            "origin": "author-created",
-            "modifiedFromUpstream": false,
-            "lastReviewed": "2026-09-06"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "draft-write"
-            ],
-            "approval": "Operator reviews and confirms sequence content and any claim, deadline, or bonus before it is published or sent anywhere."
-          },
-          "tests": [
-            "packs/marketing/skills/email-sequences/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/email-sequences", "sha256": "9a08f48d7c5aaa9b520495cbc0281848bd7fd5d87acccc19e03a4fdecb5d0a5b"},
+          "provenance": {"origin": "author-created", "modifiedFromUpstream": false, "lastReviewed": "2026-09-06"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["draft-write"], "approval": "Operator reviews and confirms sequence content and any claim, deadline, or bonus before it is published or sent anywhere."},
+          "tests": ["packs/marketing/skills/email-sequences/evals/eval-1.md"]
         },
         {
           "id": "newsletters",
           "description": "Plan and draft a recurring newsletter with one clear goal per issue.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/newsletters",
-            "sha256": "8311ef387b48c676663bfd5a92d500054c7c400b6745602ba060cdba8841f94a"
-          },
-          "provenance": {
-            "origin": "author-created",
-            "modifiedFromUpstream": false,
-            "lastReviewed": "2026-09-06"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "draft-write"
-            ],
-            "approval": "Operator reviews and confirms the issue and any cited number or result before it is published or sent anywhere."
-          },
-          "tests": [
-            "packs/marketing/skills/newsletters/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/newsletters", "sha256": "8311ef387b48c676663bfd5a92d500054c7c400b6745602ba060cdba8841f94a"},
+          "provenance": {"origin": "author-created", "modifiedFromUpstream": false, "lastReviewed": "2026-09-06"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["draft-write"], "approval": "Operator reviews and confirms the issue and any cited number or result before it is published or sent anywhere."},
+          "tests": ["packs/marketing/skills/newsletters/evals/eval-1.md"]
         },
         {
           "id": "content-atomisation",
           "description": "Turn one long-form asset into platform-native distribution pieces.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/content-atomisation",
-            "sha256": "d2918e5f1b140efb0ebcee9e703f74b027093184453d24b083679d775db1c51c"
-          },
-          "provenance": {
-            "origin": "author-created",
-            "modifiedFromUpstream": false,
-            "lastReviewed": "2026-09-06"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "draft-write"
-            ],
-            "approval": "Operator reviews and confirms each piece before it is published or sent anywhere."
-          },
-          "tests": [
-            "packs/marketing/skills/content-atomisation/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/content-atomisation", "sha256": "d2918e5f1b140efb0ebcee9e703f74b027093184453d24b083679d775db1c51c"},
+          "provenance": {"origin": "author-created", "modifiedFromUpstream": false, "lastReviewed": "2026-09-06"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["draft-write"], "approval": "Operator reviews and confirms each piece before it is published or sent anywhere."},
+          "tests": ["packs/marketing/skills/content-atomisation/evals/eval-1.md"]
         },
         {
           "id": "campaign-review",
           "description": "Diagnose campaign performance and check drafted assets against brand voice and offer.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/campaign-review",
-            "sha256": "b391a16de5bef771b7cc56dcf126c0e47086021b168511be8fd453d0a80e7825"
-          },
-          "provenance": {
-            "origin": "author-created",
-            "modifiedFromUpstream": false,
-            "lastReviewed": "2026-09-06"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "local-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/campaign-review/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/campaign-review", "sha256": "b391a16de5bef771b7cc56dcf126c0e47086021b168511be8fd453d0a80e7825"},
+          "provenance": {"origin": "author-created", "modifiedFromUpstream": false, "lastReviewed": "2026-09-06"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["local-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/campaign-review/evals/eval-1.md"]
         },
         {
           "id": "seo-analysis",
           "description": "Full technical and content SEO audit using live Search Console and page-performance data.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/seo-analysis",
-            "sha256": "45c0dbcb0452cebb293f7dfba70b47c3f702ab346f7d0e9caa292e820e8b6752"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-06",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "hostedMcps": [
-              {
-                "name": "NotFair",
-                "purpose": "Optional hosted connector for Search Console/PageSpeed access instead of a direct API credential.",
-                "url": "https://notfair.co/api/mcp/notfair",
-                "authorization": "OAuth"
-              }
-            ],
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/seo-analysis/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/seo-analysis", "sha256": "45c0dbcb0452cebb293f7dfba70b47c3f702ab346f7d0e9caa292e820e8b6752"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-06", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for Search Console/PageSpeed access instead of a direct API credential.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/seo-analysis/evals/eval-1.md"]
         },
         {
           "id": "keyword-research",
           "description": "Seed-driven keyword discovery, clustering, and prioritization.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/keyword-research",
-            "sha256": "2eab7c58610a0c6df4eaadd6750e0f0b47baee01f88d5e6cde1ff0068b5cf6ca"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-06",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "hostedMcps": [
-              {
-                "name": "NotFair",
-                "purpose": "Optional hosted connector for keyword volume/difficulty data instead of a direct API credential.",
-                "url": "https://notfair.co/api/mcp/notfair",
-                "authorization": "OAuth"
-              }
-            ],
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/keyword-research/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/keyword-research", "sha256": "2eab7c58610a0c6df4eaadd6750e0f0b47baee01f88d5e6cde1ff0068b5cf6ca"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-06", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for keyword volume/difficulty data instead of a direct API credential.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/keyword-research/evals/eval-1.md"]
         },
         {
           "id": "geo-optimizer",
           "description": "Audit and restructure content for citability by AI answer engines.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/geo-optimizer",
-            "sha256": "15ff452a5b11535fca12497c1af308ee6dbb04a61df62e350fc1a4b03dc2d71c"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-06",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "hostedMcps": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "draft-write"
-            ],
-            "approval": "Operator reviews and confirms rewritten content before it is published or sent anywhere."
-          },
-          "tests": [
-            "packs/marketing/skills/geo-optimizer/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/geo-optimizer", "sha256": "15ff452a5b11535fca12497c1af308ee6dbb04a61df62e350fc1a4b03dc2d71c"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-06", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"requiredLocal": [], "optionalLocal": [], "externalServices": [], "hostedMcps": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["draft-write"], "approval": "Operator reviews and confirms rewritten content before it is published or sent anywhere."},
+          "tests": ["packs/marketing/skills/geo-optimizer/evals/eval-1.md"]
         },
         {
           "id": "content-planner",
           "description": "Build a dated content calendar from real Search Console demand data.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/content-planner",
-            "sha256": "767cfa9e57f13edf7bca5e8748ea37f1ea818d0be398776dbcf90d8f97f10292"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-06",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "hostedMcps": [
-              {
-                "name": "NotFair",
-                "purpose": "Optional hosted connector for Search Console access instead of a direct API credential.",
-                "url": "https://notfair.co/api/mcp/notfair",
-                "authorization": "OAuth"
-              }
-            ],
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/content-planner/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/content-planner", "sha256": "767cfa9e57f13edf7bca5e8748ea37f1ea818d0be398776dbcf90d8f97f10292"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-06", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for Search Console access instead of a direct API credential.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/content-planner/evals/eval-1.md"]
         },
         {
           "id": "search-console",
           "description": "Query live Search Console performance, indexing, and sitemap status.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/search-console",
-            "sha256": "8fd2229100c7ad44faf6a6db999de8f61a1526601a337406fbddab3bdf124f8f"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-06",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "hostedMcps": [
-              {
-                "name": "NotFair",
-                "purpose": "Optional hosted connector for Search Console access instead of a direct API credential.",
-                "url": "https://notfair.co/api/mcp/notfair",
-                "authorization": "OAuth"
-              }
-            ],
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/search-console/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/search-console", "sha256": "8fd2229100c7ad44faf6a6db999de8f61a1526601a337406fbddab3bdf124f8f"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-06", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for Search Console access instead of a direct API credential.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/search-console/evals/eval-1.md"]
         },
         {
           "id": "google-analytics",
           "description": "Query live GA4 traffic, acquisition, engagement, and conversion data.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/google-analytics",
-            "sha256": "b96c45f73f4e94e6b29ad3099369519a694789562141940136b542a240fc1f4d"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-06",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "hostedMcps": [
-              {
-                "name": "NotFair",
-                "purpose": "Optional hosted connector for GA4 access instead of a direct API credential.",
-                "url": "https://notfair.co/api/mcp/notfair",
-                "authorization": "OAuth"
-              }
-            ],
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/google-analytics/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/google-analytics", "sha256": "b96c45f73f4e94e6b29ad3099369519a694789562141940136b542a240fc1f4d"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-06", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for GA4 access instead of a direct API credential.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/google-analytics/evals/eval-1.md"]
         },
         {
           "id": "google-ads-audit",
           "description": "Read-only Google Ads account health audit and business-context capture.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/google-ads-audit",
-            "sha256": "0e22af70fe780c5cc3beeae0ae0f38716efaaf38cdde3be9a1b5fb4ec368527e"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-06",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "hostedMcps": [
-              {
-                "name": "NotFair",
-                "purpose": "Optional hosted connector for Google Ads access instead of a direct API credential.",
-                "url": "https://notfair.co/api/mcp/notfair",
-                "authorization": "OAuth"
-              }
-            ],
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/google-ads-audit/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/google-ads-audit", "sha256": "0e22af70fe780c5cc3beeae0ae0f38716efaaf38cdde3be9a1b5fb4ec368527e"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-06", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for Google Ads access instead of a direct API credential.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/google-ads-audit/evals/eval-1.md"]
         },
         {
           "id": "google-ads-manage",
           "description": "Operate an already-authorized Google Ads account using live evidence, including supported bid, budget, targeting, keyword and campaign mutations.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/google-ads-manage",
-            "sha256": "5cfe477497453985014abbb58b4e4ad73e7bdd3ea2bd7ca1c43f4933865b1901"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-07",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "hostedMcps": [
-              {
-                "name": "NotFair",
-                "purpose": "Optional hosted connector for authorized Google Ads reads and supported mutations instead of a direct API credential.",
-                "url": "https://notfair.co/api/mcp/notfair",
-                "authorization": "OAuth"
-              }
-            ],
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read",
-              "external-write",
-              "spend-mutation"
-            ],
-            "approval": "No Farstax-specific approval. Execute only within authority already granted by the workspace owner and connected account/tool, and respect any native approval or budget controls. If a write is denied or unavailable, do not bypass it; return the proposed change instead."
-          },
-          "tests": [
-            "packs/marketing/skills/google-ads-manage/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/google-ads-manage", "sha256": "5cfe477497453985014abbb58b4e4ad73e7bdd3ea2bd7ca1c43f4933865b1901"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-07", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for authorized Google Ads reads and supported mutations instead of a direct API credential.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read", "external-write", "spend-mutation"], "approval": "No Farstax-specific approval. Execute only within authority already granted by the workspace owner and connected account/tool, and respect any native approval or budget controls. If a write is denied or unavailable, do not bypass it; return the proposed change instead."},
+          "tests": ["packs/marketing/skills/google-ads-manage/evals/eval-1.md"]
         },
         {
           "id": "meta-ads-audit",
           "description": "Read-only Meta (Facebook + Instagram) Ads account health audit and business-context capture.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/meta-ads-audit",
-            "sha256": "e912577eb1c393178025edf810bbd6a5344b6fa874d2c5a2f55faac2b33f5096"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-06",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "hostedMcps": [
-              {
-                "name": "NotFair",
-                "purpose": "Optional hosted connector for Meta Ads access instead of a direct API credential.",
-                "url": "https://notfair.co/api/mcp/notfair",
-                "authorization": "OAuth"
-              }
-            ],
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/meta-ads-audit/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/meta-ads-audit", "sha256": "e912577eb1c393178025edf810bbd6a5344b6fa874d2c5a2f55faac2b33f5096"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-06", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for Meta Ads access instead of a direct API credential.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/meta-ads-audit/evals/eval-1.md"]
         },
         {
           "id": "meta-ads-manage",
           "description": "Operate an already-authorized Meta Ads account using live evidence, including supported budget, delivery, targeting and campaign mutations.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/meta-ads-manage",
-            "sha256": "bc3ccb4ac8f1714bcd2d95515f3527e06d6954b27c49f8eca538fd82ac9af906"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-07",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "hostedMcps": [
-              {
-                "name": "NotFair",
-                "purpose": "Optional hosted connector for authorized Meta Ads reads and supported mutations instead of a direct API credential.",
-                "url": "https://notfair.co/api/mcp/notfair",
-                "authorization": "OAuth"
-              }
-            ],
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read",
-              "external-write",
-              "spend-mutation"
-            ],
-            "approval": "No Farstax-specific approval. Execute only within authority already granted by the workspace owner and connected account/tool, and respect any native approval or budget controls. If a write is denied or unavailable, do not bypass it; return the proposed change instead."
-          },
-          "tests": [
-            "packs/marketing/skills/meta-ads-manage/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/meta-ads-manage", "sha256": "bc3ccb4ac8f1714bcd2d95515f3527e06d6954b27c49f8eca538fd82ac9af906"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-07", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for authorized Meta Ads reads and supported mutations instead of a direct API credential.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read", "external-write", "spend-mutation"], "approval": "No Farstax-specific approval. Execute only within authority already granted by the workspace owner and connected account/tool, and respect any native approval or budget controls. If a write is denied or unavailable, do not bypass it; return the proposed change instead."},
+          "tests": ["packs/marketing/skills/meta-ads-manage/evals/eval-1.md"]
         },
         {
           "id": "paid-ads-review",
           "description": "Read-only, evidence-based cross-channel paid-media performance review.",
-          "content": {
-            "repository": "https://github.com/Farstax/agent-bridge-skills",
-            "revision": "f065bc353743e8b59e355650dcba16df302176a3",
-            "path": "packs/marketing/skills/paid-ads-review",
-            "sha256": "930867b12574a5adf92f63141ec402627a7427893f335fd5ff6b20896d08d0ae"
-          },
-          "provenance": {
-            "origin": "adapted-upstream",
-            "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
-            "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
-            "upstreamLicense": "MIT",
-            "noticePath": "packs/marketing/NOTICE.md",
-            "lastReviewed": "2026-09-06",
-            "modifiedFromUpstream": true,
-            "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
-          },
-          "supportedHosts": [
-            "codex",
-            "claude",
-            "agy"
-          ],
-          "dependencies": {
-            "hostedMcps": [
-              {
-                "name": "NotFair",
-                "purpose": "Optional hosted connector for cross-channel ad-platform data instead of direct API credentials.",
-                "url": "https://notfair.co/api/mcp/notfair",
-                "authorization": "OAuth"
-              }
-            ],
-            "requiredLocal": [],
-            "optionalLocal": [],
-            "externalServices": [],
-            "requiredSecrets": []
-          },
-          "capabilities": {
-            "effects": [
-              "external-read"
-            ],
-            "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."
-          },
-          "tests": [
-            "packs/marketing/skills/paid-ads-review/evals/eval-1.md"
-          ]
+          "content": {"repository": "https://github.com/Farstax/agent-bridge-skills", "revision": "9fad4514eabaff7b40de51db8db7275d9b2049d0", "path": "packs/marketing/skills/paid-ads-review", "sha256": "930867b12574a5adf92f63141ec402627a7427893f335fd5ff6b20896d08d0ae"},
+          "provenance": {"origin": "adapted-upstream", "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin", "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2", "upstreamLicense": "MIT", "noticePath": "packs/marketing/NOTICE.md", "lastReviewed": "2026-09-06", "modifiedFromUpstream": true, "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"},
+          "supportedHosts": ["codex", "claude", "agy"],
+          "dependencies": {"hostedMcps": [{"name": "NotFair", "purpose": "Optional hosted connector for cross-channel ad-platform data instead of direct API credentials.", "url": "https://notfair.co/api/mcp/notfair", "authorization": "OAuth"}], "requiredLocal": [], "optionalLocal": [], "externalServices": [], "requiredSecrets": []},
+          "capabilities": {"effects": ["external-read"], "approval": "None — Skill performs no external mutation or spend; normal tool/account authorization remains authoritative for any live-data connection it uses."},
+          "tests": ["packs/marketing/skills/paid-ads-review/evals/eval-1.md"]
         }
       ]
     },
