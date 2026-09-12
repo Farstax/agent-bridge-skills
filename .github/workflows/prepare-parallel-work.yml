@@ -1,0 +1,126 @@
+name: Prepare parallel-work catalogue
+
+on:
+  push:
+    branches: [issue-11-parallel-work]
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Add Build pack metadata and docs
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          script = Path("scripts/build-catalogue.mjs")
+          text = script.read_text()
+          if "function buildBuildPack(revision)" in text:
+              raise SystemExit("build pack already present; refusing to patch twice")
+
+          marker = "\nfunction main() {\n"
+          if marker not in text:
+              raise SystemExit("build-catalogue main marker not found")
+
+          addition = r'''
+          const buildSkills = [
+            {
+              id: "parallel-work",
+              description: "Turn independent scopes into safe provider-native parallel work with mutation isolation, independent verification, and deterministic reconciliation.",
+              supportedHosts: HOSTS,
+              dependencies: emptyDependencies(),
+              capabilities: {
+                effects: ["local-read", "draft-write"],
+                approval: "No additional authority. Each worker remains bound by the same user, repository, runtime, tool, and approval boundaries as the root Run.",
+              },
+              tests: ["packs/build/skills/parallel-work/evals/eval-1.md"],
+              provenance: {
+                origin: "author-created",
+                modifiedFromUpstream: false,
+                lastReviewed: "2026-09-12",
+              },
+            },
+          ];
+
+          function buildBuildPack(revision) {
+            const resolvedSkills = buildSkills.map((skill) => ({
+              id: skill.id,
+              description: skill.description,
+              content: {
+                repository: REPOSITORY,
+                revision,
+                path: `packs/build/skills/${skill.id}`,
+                sha256: hashSkillPackDirectorySha256(join(repoRoot, "packs", "build", "skills", skill.id)),
+              },
+              provenance: skill.provenance,
+              supportedHosts: skill.supportedHosts,
+              dependencies: skill.dependencies,
+              capabilities: skill.capabilities,
+              tests: skill.tests,
+            }));
+            const allEffects = [...new Set(resolvedSkills.flatMap((s) => s.capabilities.effects))];
+
+            return {
+              id: "build",
+              displayName: "Build",
+              description: "Provider-neutral engineering methods for substantial implementation, audit, and codebase work.",
+              version: "0.1.0",
+              maintainer: "Farstax",
+              license: "MIT",
+              categories: ["engineering", "development"],
+              capabilityTags: ["engineering:parallelism", "engineering:agent-workflow"],
+              attribution: [REPOSITORY],
+              compatibility: { apiVersion: 1, minAgentBridgeVersion: "2026.9.7-2", supportedHosts: HOSTS },
+              dependencies: aggregateDependencies(resolvedSkills),
+              capabilities: {
+                effects: allEffects,
+                approval: "Individual Skill authority applies. Installing this pack grants no additional repository, tool, external-action, or approval authority.",
+              },
+              tests: ["tests/validate.py"],
+              skills: resolvedSkills,
+            };
+          }
+          '''
+          text = text.replace(marker, "\n" + addition.strip() + "\n\nfunction main() {\n", 1)
+
+          old = '    catalogueVersion: "1.1.0",\n    packs: [buildPack(revision)],'
+          new = '    catalogueVersion: "1.2.0",\n    packs: [buildPack(revision), buildBuildPack(revision)],'
+          if old not in text:
+              raise SystemExit("catalogue block did not match expected main")
+          text = text.replace(old, new, 1)
+          script.write_text(text)
+
+          readme = Path("README.md")
+          rtext = readme.read_text()
+          old_heading = "## Initial pack: `marketing`\n\n"
+          if old_heading not in rtext:
+              raise SystemExit("README marketing heading not found")
+          replacement = """## Packs\n\n### `build`\n\nProvider-neutral engineering methods for substantial agent work. The first Skill, `parallel-work`, turns genuinely independent scopes into safe provider-native fan-out while keeping dependent or conflicting mutation sequential. See `packs/build/README.md`.\n\n### `marketing`\n\n"""
+          readme.write_text(rtext.replace(old_heading, replacement, 1))
+          PY
+      - name: Generate pinned catalogue
+        run: node scripts/build-catalogue.mjs --revision "$GITHUB_SHA"
+      - name: Validate
+        run: |
+          python3 -m pip install -r tests/requirements.txt
+          python3 tests/validate.py
+      - name: Commit generated publication state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/build-catalogue.mjs README.md catalogue.json
+          git commit -m "Publish parallel-work skill"
+          git push
