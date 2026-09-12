@@ -1,0 +1,55 @@
+name: Minimise parallel-work catalogue diff
+
+on:
+  push:
+    branches: [issue-11-parallel-work]
+
+permissions:
+  contents: write
+
+jobs:
+  minimise:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Preserve unchanged Marketing catalogue bytes
+        run: |
+          git show origin/main:catalogue.json > /tmp/main-catalogue.json
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+
+          generated = json.loads(Path('catalogue.json').read_text())
+          build = next(p for p in generated['packs'] if p['id'] == 'build')
+          base = Path('/tmp/main-catalogue.json').read_text()
+          old_version = '  "catalogueVersion": "1.1.0",'
+          if old_version not in base:
+              raise SystemExit('main catalogue version marker not found')
+          base = base.replace(old_version, '  "catalogueVersion": "1.2.0",', 1)
+          tail = '\n  ]\n}\n'
+          if not base.endswith(tail):
+              raise SystemExit('main catalogue tail did not match expected shape')
+          block = json.dumps(build, indent=2)
+          block = '\n'.join('    ' + line for line in block.splitlines())
+          Path('catalogue.json').write_text(base[:-len(tail)] + ',\n' + block + tail)
+          PY
+      - name: Validate exact branch state
+        run: |
+          python3 -m pip install -r tests/requirements.txt
+          python3 tests/validate.py
+      - name: Commit compact catalogue
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalogue.json
+          git commit -m "Keep catalogue delta scoped to parallel-work"
+          git push
