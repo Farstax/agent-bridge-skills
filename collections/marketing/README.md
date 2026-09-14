@@ -1,8 +1,8 @@
-# Marketing pack
+# Marketing Collection
 
 Strategy, acquisition, conversion, distribution, and measurement capabilities
 for a resident business agent. Version `0.2.0`, installable through Agent
-Bridge's Skill Pack mechanism (`Farstax/agent-bridge#703`) — see the top-level
+Bridge's Skill Collection mechanism (`Farstax/agent-bridge#703`) — see the top-level
 `README.md` for install commands.
 
 ## Flow
@@ -86,23 +86,23 @@ audits: `google-ads-manage` and `meta-ads-manage`. They can perform supported
 live mutations, including spend-affecting changes, **only through authority
 already granted by the workspace owner and connected account/tool**.
 
-Installing the pack does not authorize an ad account, widen OAuth scope,
+Installing the Collection does not authorize an ad account, widen OAuth scope,
 change an account role, create a budget, or add a Farstax-specific spend
 approval system. Account permissions, configured budgets/limits, and native
 tool/service controls remain authoritative. If a requested write is denied or
 unavailable, these Skills stop and return the exact proposed change rather
 than trying to obtain or bypass broader authority.
 
-The pack still deliberately omits NotFair's broader mutation surface — for
+The Collection still deliberately omits NotFair's broader mutation surface — for
 example paid-ad launch/setup/creative Skills and additional ad platforms —
 until there is a concrete use case that justifies adding them. The goal is a
 curated operational set, not a mirror of every upstream Skill.
 
 ## External services
 
-No Skill in this pack authorizes an external account on its own. Several
+No Skill in this Collection authorizes an external account on its own. Several
 Skills can optionally use NotFair's hosted MCP, or Google's own APIs, for live
 data and supported writes — see `dependencies.externalServices` /
 `dependencies.hostedMcps` in each Skill's `dependencies` in `catalogue.json`.
 The operator must connect and authorize those services separately; installing
-this pack does not do it for them.
+this Collection does not do it for them.

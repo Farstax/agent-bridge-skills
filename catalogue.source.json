@@ -1,0 +1,387 @@
+{
+  "catalogueId": "farstax-agent-bridge-skills",
+  "skills": [
+    {
+      "id": "market-research",
+      "description": "Turn public signal into named pain points, demand evidence, and a competitive gap.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/market-research"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "positioning",
+      "description": "Define a defensible market position and the angle that makes it obvious.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/positioning"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "offer-design",
+      "description": "Design a specific, priced offer with real risk reversal.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/offer-design"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "brand-voice",
+      "description": "Define one consistent, human brand voice as a filter for other writing Skills.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/brand-voice"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "creative-strategy",
+      "description": "Define visual and creative direction grounded in brand voice and audience.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/creative-strategy"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "lead-magnets",
+      "description": "Design a narrow, high-value free asset that leads to the core offer.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/lead-magnets"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "conversion-copy",
+      "description": "Write evidence-led landing-page and direct-response copy grounded in the offer and brand voice.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/conversion-copy"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "email-sequences",
+      "description": "Design welcome, nurture, launch, and recovery email sequences without manufactured pressure.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/email-sequences"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "newsletters",
+      "description": "Plan and draft a recurring newsletter with one clear goal per issue.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/newsletters"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "content-atomisation",
+      "description": "Turn one long-form asset into platform-native distribution pieces.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/content-atomisation"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "campaign-review",
+      "description": "Diagnose campaign performance and check drafted assets against brand voice and offer.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/campaign-review"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-06"
+      }
+    },
+    {
+      "id": "seo-analysis",
+      "description": "Full technical and content SEO audit using live Search Console and page-performance data.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/seo-analysis"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-06",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "keyword-research",
+      "description": "Seed-driven keyword discovery, clustering, and prioritization.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/keyword-research"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-06",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "geo-optimizer",
+      "description": "Audit and restructure content for citability by AI answer engines.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/geo-optimizer"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-06",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "content-planner",
+      "description": "Build a dated content calendar from real Search Console demand data.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/content-planner"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-06",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "search-console",
+      "description": "Query live Search Console performance, indexing, and sitemap status.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/search-console"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-06",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "google-analytics",
+      "description": "Query live GA4 traffic, acquisition, engagement, and conversion data.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/google-analytics"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-06",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "google-ads-audit",
+      "description": "Read-only Google Ads account health audit and business-context capture.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/google-ads-audit"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-06",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "google-ads-manage",
+      "description": "Operate an already-authorized Google Ads account using live evidence, including supported bid, budget, targeting, keyword and campaign mutations.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/google-ads-manage"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "meta-ads-audit",
+      "description": "Read-only Meta (Facebook + Instagram) Ads account health audit and business-context capture.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/meta-ads-audit"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-06",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "meta-ads-manage",
+      "description": "Operate an already-authorized Meta Ads account using live evidence, including supported budget, delivery, targeting and campaign mutations.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/meta-ads-manage"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "paid-ads-review",
+      "description": "Read-only, evidence-based cross-channel paid-media performance review.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/paid-ads-review"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/nowork-studio/notfair-plugin",
+        "upstreamRevision": "daf87d3d4c985fa34ff7843aa570bc8c0d656ec2",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-09-06",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "parallel-work",
+      "description": "Turn independent scopes into safe provider-native parallel work with mutation isolation, independent verification, and deterministic reconciliation.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/build/skills/parallel-work"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-12"
+      }
+    }
+  ],
+  "collections": [
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "description": "Strategy, acquisition, conversion, distribution and marketing measurement capabilities for a resident business agent.",
+      "skills": [
+        "market-research",
+        "positioning",
+        "offer-design",
+        "brand-voice",
+        "creative-strategy",
+        "lead-magnets",
+        "conversion-copy",
+        "email-sequences",
+        "newsletters",
+        "content-atomisation",
+        "campaign-review",
+        "seo-analysis",
+        "keyword-research",
+        "geo-optimizer",
+        "content-planner",
+        "search-console",
+        "google-analytics",
+        "google-ads-audit",
+        "google-ads-manage",
+        "meta-ads-audit",
+        "meta-ads-manage",
+        "paid-ads-review"
+      ]
+    },
+    {
+      "id": "build",
+      "name": "Build",
+      "description": "Provider-neutral engineering methods for substantial implementation, audit, and codebase work.",
+      "skills": [
+        "parallel-work"
+      ]
+    }
+  ]
+}
