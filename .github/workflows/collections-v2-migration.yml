@@ -1,0 +1,178 @@
+name: Collections v2 migration helper
+on:
+  push:
+    branches: [feat/collections-v2]
+permissions:
+  contents: write
+jobs:
+  migrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Convert curation source to Skills and Collections
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, shutil, re
+
+          old = json.loads(Path('catalogue.json').read_text())
+          skills = []
+          collections = []
+          seen = set()
+          for pack in old.get('packs', []):
+              refs = []
+              for skill in pack.get('skills', []):
+                  sid = skill['id']
+                  refs.append(sid)
+                  if sid in seen:
+                      continue
+                  seen.add(sid)
+                  content = dict(skill['content'])
+                  content.pop('revision', None)
+                  content.pop('sha256', None)
+                  content['path'] = content['path'].replace('packs/', 'collections/', 1)
+                  provenance = dict(skill['provenance'])
+                  if provenance.get('noticePath'):
+                      provenance['noticePath'] = provenance['noticePath'].replace('packs/', 'collections/', 1)
+                      provenance.pop('noticeSha256', None)
+                  skills.append({
+                      'id': sid,
+                      'description': skill['description'],
+                      'content': content,
+                      'provenance': provenance,
+                  })
+              collections.append({
+                  'id': pack['id'],
+                  'name': pack['name'],
+                  'description': pack['description'],
+                  'skills': refs,
+              })
+
+          source = {'catalogueId': old.get('catalogueId', 'farstax-curated'), 'skills': skills, 'collections': collections}
+          Path('catalogue.source.json').write_text(json.dumps(source, indent=2) + '\n')
+          if Path('packs').exists():
+              shutil.move('packs', 'collections')
+
+          Path('scripts/build-catalogue.mjs').write_text(r'''#!/usr/bin/env node
+          import { createHash } from "node:crypto";
+          import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
+          import path from "node:path";
+
+          const args = process.argv.slice(2);
+          const index = args.indexOf("--revision");
+          const revision = index >= 0 ? args[index + 1] : null;
+          if (!revision || !/^[0-9a-f]{40}$/i.test(revision)) {
+            console.error("usage: node scripts/build-catalogue.mjs --revision <40-char-commit-sha>");
+            process.exit(1);
+          }
+          const source = JSON.parse(readFileSync("catalogue.source.json", "utf8"));
+          const files = (dir) => {
+            const out = [];
+            for (const entry of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+              const full = path.join(dir, entry.name);
+              if (entry.isDirectory()) out.push(...files(full));
+              else if (entry.isFile()) out.push(full);
+            }
+            return out;
+          };
+          const hashDirectory = (dir) => {
+            const hash = createHash("sha256");
+            for (const file of files(dir)) {
+              hash.update(path.relative(dir, file).split(path.sep).join("/"));
+              hash.update("\0");
+              hash.update(readFileSync(file));
+              hash.update("\0");
+            }
+            return hash.digest("hex");
+          };
+          const fileHash = (file) => createHash("sha256").update(readFileSync(file)).digest("hex");
+          const skills = source.skills.map((skill) => {
+            if (!existsSync(skill.content.path) || !statSync(skill.content.path).isDirectory()) throw new Error(`missing Skill directory: ${skill.content.path}`);
+            const provenance = { ...skill.provenance };
+            if (provenance.noticePath) {
+              if (!existsSync(provenance.noticePath)) throw new Error(`missing notice: ${provenance.noticePath}`);
+              provenance.noticeSha256 = fileHash(provenance.noticePath);
+            }
+            return {
+              id: skill.id,
+              description: skill.description,
+              content: { ...skill.content, revision, sha256: hashDirectory(skill.content.path) },
+              provenance,
+            };
+          });
+          const catalogue = { schemaVersion: 2, catalogueId: source.catalogueId, skills, collections: source.collections };
+          writeFileSync("catalogue.json", JSON.stringify(catalogue, null, 2) + "\n");
+          ''')
+
+          Path('tests/validate.py').write_text(r'''#!/usr/bin/env python3
+          import hashlib, json
+          from pathlib import Path
+          import jsonschema
+
+          root = Path(__file__).resolve().parents[1]
+          catalogue = json.loads((root / "catalogue.json").read_text())
+          schema = json.loads((root / "schemas/skill-collection.schema.json").read_text())
+          jsonschema.Draft202012Validator(schema).validate(catalogue)
+
+          def hash_dir(directory: Path) -> str:
+              digest = hashlib.sha256()
+              for file in sorted(p for p in directory.rglob('*') if p.is_file()):
+                  digest.update(file.relative_to(directory).as_posix().encode())
+                  digest.update(b'\0')
+                  digest.update(file.read_bytes())
+                  digest.update(b'\0')
+              return digest.hexdigest()
+
+          ids = {skill['id'] for skill in catalogue['skills']}
+          assert len(ids) == len(catalogue['skills'])
+          for skill in catalogue['skills']:
+              directory = root / skill['content']['path']
+              assert directory.is_dir(), f"missing Skill directory: {directory}"
+              assert (directory / 'SKILL.md').is_file(), f"missing SKILL.md: {directory}"
+              assert hash_dir(directory) == skill['content']['sha256'], f"hash mismatch: {skill['id']}"
+              evals = directory / 'evals'
+              assert evals.is_dir() and any(evals.glob('*.md')), f"missing eval: {skill['id']}"
+              provenance = skill['provenance']
+              if provenance.get('noticePath'):
+                  notice = root / provenance['noticePath']
+                  assert notice.is_file(), f"missing notice: {skill['id']}"
+                  assert hashlib.sha256(notice.read_bytes()).hexdigest() == provenance['noticeSha256']
+          for collection in catalogue['collections']:
+              assert collection['skills'], f"empty Collection: {collection['id']}"
+              for skill_id in collection['skills']:
+                  assert skill_id in ids, f"unknown Skill {skill_id} in Collection {collection['id']}"
+          print(f"validated {len(catalogue['skills'])} Skills and {len(catalogue['collections'])} Collections")
+          ''')
+
+          Path('AGENTS.md').write_text('''# AGENTS.md — agent-bridge-skills\n\nThis repository curates optional Skills for Agent Bridge. Agent Bridge is the runtime and installed-state authority. This repository publishes only immutable Skill content plus lightweight Collections.\n\n## Model\n\n- **Skill** is the actual reusable capability. Every Skill is independently installable.\n- **Collection** is only a named group of Skill ids for discovery and installation convenience. It has no runtime lifecycle beyond Agent Bridge reference bookkeeping.\n- Stacks may recommend Skills or Collections. They never own them.\n- Connections, OAuth, tools, providers and external services are separate runtime concerns. Do not encode them as Skill dependencies or installation side effects.\n\n`catalogue.json` is the canonical machine-consumed schema-v2 artefact. `catalogue.source.json` is its curation source. Skill content lives under `collections/<collection-id>/skills/<skill-id>/`; the directory grouping is editorial only.\n\n## Publishing\n\n1. Edit Skill content and/or `catalogue.source.json`. Keep one clear job per Skill and preserve provenance/licensing. Never add secrets or customer data.\n2. Commit the source/content change.\n3. Run `node scripts/build-catalogue.mjs --revision "$(git rev-parse HEAD)"`.\n4. Run `python3 -m pip install -r tests/requirements.txt && python3 tests/validate.py`.\n5. Commit `catalogue.json` separately. Merge with a merge commit, not squash, so the pinned source revision remains reachable.\n\nThe schema is vendored from Agent Bridge `docs/skill-collection.schema.json`; replace it wholesale when the canonical schema changes. Validation must prove schema, pinned hashes, notices, Collection references, and at least one eval per curated Skill.\n''')
+
+          readme = '''# Farstax Agent Bridge Skills\n\nCurated optional Skills for Agent Bridge. Agent Bridge owns installation, projection, integrity checks and removal.\n\n`catalogue.json` publishes canonical Skills plus lightweight Collections. A Collection is only curation/install convenience: installing one installs missing ordinary Skills, and removing one leaves independently installed or shared Skills in place.\n\nSkills do not require a Farstax Stack and do not authorize Connections, OAuth, hosted services, tools or providers.\n\nSee `AGENTS.md` for the publishing and validation contract.\n'''
+          Path('README.md').write_text(readme)
+
+          for file in Path('collections').glob('*/README.md'):
+              text = file.read_text()
+              text = re.sub(r'\bSkill Pack\b', 'Skill Collection', text)
+              text = re.sub(r'\bpack\b', 'Collection', text, flags=re.I)
+              file.write_text(text)
+
+          old_schema = Path('schemas/skill-pack.schema.json')
+          if old_schema.exists(): old_schema.unlink()
+          Path('.github/workflows/collections-v2-migration.yml').unlink()
+          PY
+          curl -fsSL https://raw.githubusercontent.com/Farstax/agent-bridge/main/docs/skill-collection.schema.json -o schemas/skill-collection.schema.json
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m "refactor: publish Skills and lightweight Collections"
+          revision="$(git rev-parse HEAD)"
+          node scripts/build-catalogue.mjs --revision "$revision"
+          python3 -m pip install -q -r tests/requirements.txt
+          python3 tests/validate.py
+          git add catalogue.json
+          git commit -m "Publish Collections catalogue pinned to $revision"
+          git push
