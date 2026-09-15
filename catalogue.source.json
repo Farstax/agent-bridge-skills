@@ -1,5 +1,4 @@
 {
-  "schemaVersion": 2,
   "catalogueId": "farstax-agent-bridge-skills",
   "skills": [
     {
@@ -7,9 +6,7 @@
       "description": "Turn public signal into named pain points, demand evidence, and a competitive gap.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/market-research",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "65f07540e104c5c5e0a9a06f931b6ba2ad2c8e38d4ce4e9d7a11651397a312fb"
+        "path": "collections/marketing/skills/market-research"
       },
       "provenance": {
         "origin": "author-created",
@@ -22,9 +19,7 @@
       "description": "Define a defensible market position and the angle that makes it obvious.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/positioning",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "09d88bc0814a4173f22e8245e4fb88bd0b1517d484401c34cf58668c0fc6a467"
+        "path": "collections/marketing/skills/positioning"
       },
       "provenance": {
         "origin": "author-created",
@@ -37,9 +32,7 @@
       "description": "Design a specific, priced offer with real risk reversal.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/offer-design",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "157091323847e7220f2d3b0551d4c991c0720ed9de5bc7a5f9f09a47eb42c702"
+        "path": "collections/marketing/skills/offer-design"
       },
       "provenance": {
         "origin": "author-created",
@@ -52,9 +45,7 @@
       "description": "Define one consistent, human brand voice as a filter for other writing Skills.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/brand-voice",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "29567e2fba1e4997a5dbbe21ab82cfcc6a2420ec798ac9a847d4ec602a8734b3"
+        "path": "collections/marketing/skills/brand-voice"
       },
       "provenance": {
         "origin": "author-created",
@@ -67,9 +58,7 @@
       "description": "Define visual and creative direction grounded in brand voice and audience.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/creative-strategy",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "a1cdea4e89c271f57afaf4833032a66a2c3118aa6a6fcc3b54ae3bfcfe68e53b"
+        "path": "collections/marketing/skills/creative-strategy"
       },
       "provenance": {
         "origin": "author-created",
@@ -82,9 +71,7 @@
       "description": "Design a narrow, high-value free asset that leads to the core offer.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/lead-magnets",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "ee971c010ffb410709de843fc3095471a6b7fdc510d5925c46712e6a1f22f002"
+        "path": "collections/marketing/skills/lead-magnets"
       },
       "provenance": {
         "origin": "author-created",
@@ -97,9 +84,7 @@
       "description": "Write evidence-led landing-page and direct-response copy grounded in the offer and brand voice.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/conversion-copy",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "93cb36a7f34d2360454c14552d097ec3688b6fa9f0b8fa3548897440e810b6d7"
+        "path": "collections/marketing/skills/conversion-copy"
       },
       "provenance": {
         "origin": "author-created",
@@ -112,9 +97,7 @@
       "description": "Design welcome, nurture, launch, and recovery email sequences without manufactured pressure.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/email-sequences",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "9a08f48d7c5aaa9b520495cbc0281848bd7fd5d87acccc19e03a4fdecb5d0a5b"
+        "path": "collections/marketing/skills/email-sequences"
       },
       "provenance": {
         "origin": "author-created",
@@ -127,9 +110,7 @@
       "description": "Plan and draft a recurring newsletter with one clear goal per issue.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/newsletters",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "8311ef387b48c676663bfd5a92d500054c7c400b6745602ba060cdba8841f94a"
+        "path": "collections/marketing/skills/newsletters"
       },
       "provenance": {
         "origin": "author-created",
@@ -142,9 +123,7 @@
       "description": "Turn one long-form asset into platform-native distribution pieces.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/content-atomisation",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "d2918e5f1b140efb0ebcee9e703f74b027093184453d24b083679d775db1c51c"
+        "path": "collections/marketing/skills/content-atomisation"
       },
       "provenance": {
         "origin": "author-created",
@@ -157,9 +136,7 @@
       "description": "Diagnose campaign performance and check drafted assets against brand voice and offer.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/campaign-review",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "b391a16de5bef771b7cc56dcf126c0e47086021b168511be8fd453d0a80e7825"
+        "path": "collections/marketing/skills/campaign-review"
       },
       "provenance": {
         "origin": "author-created",
@@ -172,9 +149,7 @@
       "description": "Full technical and content SEO audit using live Search Console and page-performance data.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/seo-analysis",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "45c0dbcb0452cebb293f7dfba70b47c3f702ab346f7d0e9caa292e820e8b6752"
+        "path": "collections/marketing/skills/seo-analysis"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -183,8 +158,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-06",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -192,9 +166,7 @@
       "description": "Seed-driven keyword discovery, clustering, and prioritization.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/keyword-research",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "2eab7c58610a0c6df4eaadd6750e0f0b47baee01f88d5e6cde1ff0068b5cf6ca"
+        "path": "collections/marketing/skills/keyword-research"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -203,8 +175,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-06",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -212,9 +183,7 @@
       "description": "Audit and restructure content for citability by AI answer engines.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/geo-optimizer",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "15ff452a5b11535fca12497c1af308ee6dbb04a61df62e350fc1a4b03dc2d71c"
+        "path": "collections/marketing/skills/geo-optimizer"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -223,8 +192,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-06",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -232,9 +200,7 @@
       "description": "Build a dated content calendar from real Search Console demand data.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/content-planner",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "767cfa9e57f13edf7bca5e8748ea37f1ea818d0be398776dbcf90d8f97f10292"
+        "path": "collections/marketing/skills/content-planner"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -243,8 +209,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-06",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -252,9 +217,7 @@
       "description": "Query live Search Console performance, indexing, and sitemap status.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/search-console",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "8fd2229100c7ad44faf6a6db999de8f61a1526601a337406fbddab3bdf124f8f"
+        "path": "collections/marketing/skills/search-console"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -263,8 +226,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-06",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -272,9 +234,7 @@
       "description": "Query live GA4 traffic, acquisition, engagement, and conversion data.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/google-analytics",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "b96c45f73f4e94e6b29ad3099369519a694789562141940136b542a240fc1f4d"
+        "path": "collections/marketing/skills/google-analytics"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -283,8 +243,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-06",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -292,9 +251,7 @@
       "description": "Read-only Google Ads account health audit and business-context capture.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/google-ads-audit",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "0e22af70fe780c5cc3beeae0ae0f38716efaaf38cdde3be9a1b5fb4ec368527e"
+        "path": "collections/marketing/skills/google-ads-audit"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -303,8 +260,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-06",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -312,9 +268,7 @@
       "description": "Operate an already-authorized Google Ads account using live evidence, including supported bid, budget, targeting, keyword and campaign mutations.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/google-ads-manage",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "5cfe477497453985014abbb58b4e4ad73e7bdd3ea2bd7ca1c43f4933865b1901"
+        "path": "collections/marketing/skills/google-ads-manage"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -323,8 +277,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-07",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -332,9 +285,7 @@
       "description": "Read-only Meta (Facebook + Instagram) Ads account health audit and business-context capture.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/meta-ads-audit",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "e912577eb1c393178025edf810bbd6a5344b6fa874d2c5a2f55faac2b33f5096"
+        "path": "collections/marketing/skills/meta-ads-audit"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -343,8 +294,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-06",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -352,9 +302,7 @@
       "description": "Operate an already-authorized Meta Ads account using live evidence, including supported budget, delivery, targeting and campaign mutations.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/meta-ads-manage",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "bc3ccb4ac8f1714bcd2d95515f3527e06d6954b27c49f8eca538fd82ac9af906"
+        "path": "collections/marketing/skills/meta-ads-manage"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -363,8 +311,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-07",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -372,9 +319,7 @@
       "description": "Read-only, evidence-based cross-channel paid-media performance review.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/marketing/skills/paid-ads-review",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "930867b12574a5adf92f63141ec402627a7427893f335fd5ff6b20896d08d0ae"
+        "path": "collections/marketing/skills/paid-ads-review"
       },
       "provenance": {
         "origin": "adapted-upstream",
@@ -383,8 +328,7 @@
         "upstreamLicense": "MIT",
         "noticePath": "collections/marketing/NOTICE.md",
         "lastReviewed": "2026-09-06",
-        "modifiedFromUpstream": true,
-        "noticeSha256": "b45b1bf456b0491dac6903ff729cfc5040783539e9e0c586cd92567f511a3144"
+        "modifiedFromUpstream": true
       }
     },
     {
@@ -392,9 +336,7 @@
       "description": "Turn independent scopes into safe provider-native parallel work with mutation isolation, independent verification, and deterministic reconciliation.",
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
-        "path": "collections/build/skills/parallel-work",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
-        "sha256": "fe52ed6ce8947571a8fa4a5f4e304f1f0d9b5a4b20f60c0dfcf7dac3a82f754c"
+        "path": "collections/build/skills/parallel-work"
       },
       "provenance": {
         "origin": "author-created",

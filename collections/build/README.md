@@ -1,6 +1,6 @@
-# Build pack
+# Build Collection
 
-Provider-neutral engineering methods for agents doing substantial implementation, audit, and codebase work. This pack is intentionally instruction-only: it does not add a scheduler, daemon, worker runtime, provider abstraction, or new authority model.
+Provider-neutral engineering methods for agents doing substantial implementation, audit, and codebase work. This Collection is intentionally instruction-only: it does not add a scheduler, daemon, worker runtime, provider abstraction, or new authority model.
 
 ## Skills
 
@@ -14,4 +14,4 @@ Provider-neutral engineering methods for agents doing substantial implementation
 
 The Skill does not replace repository-specific review, release qualification, CI, approval, or deployment rules. It also does not grant any worker more authority than the root Run already has.
 
-This pack is kept deliberately small so it can migrate cleanly to the lightweight Collection model being designed in `Farstax/agent-bridge#764` without turning grouping metadata into a second capability runtime.
+This Collection is kept deliberately small so it can migrate cleanly to the lightweight Collection model being designed in `Farstax/agent-bridge#764` without turning grouping metadata into a second capability runtime.
