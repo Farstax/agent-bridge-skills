@@ -8,7 +8,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/market-research",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "65f07540e104c5c5e0a9a06f931b6ba2ad2c8e38d4ce4e9d7a11651397a312fb"
       },
       "provenance": {
@@ -23,7 +23,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/positioning",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "09d88bc0814a4173f22e8245e4fb88bd0b1517d484401c34cf58668c0fc6a467"
       },
       "provenance": {
@@ -38,7 +38,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/offer-design",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "157091323847e7220f2d3b0551d4c991c0720ed9de5bc7a5f9f09a47eb42c702"
       },
       "provenance": {
@@ -53,7 +53,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/brand-voice",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "29567e2fba1e4997a5dbbe21ab82cfcc6a2420ec798ac9a847d4ec602a8734b3"
       },
       "provenance": {
@@ -68,7 +68,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/creative-strategy",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "a1cdea4e89c271f57afaf4833032a66a2c3118aa6a6fcc3b54ae3bfcfe68e53b"
       },
       "provenance": {
@@ -83,7 +83,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/lead-magnets",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "ee971c010ffb410709de843fc3095471a6b7fdc510d5925c46712e6a1f22f002"
       },
       "provenance": {
@@ -98,7 +98,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/conversion-copy",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "93cb36a7f34d2360454c14552d097ec3688b6fa9f0b8fa3548897440e810b6d7"
       },
       "provenance": {
@@ -113,7 +113,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/email-sequences",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "9a08f48d7c5aaa9b520495cbc0281848bd7fd5d87acccc19e03a4fdecb5d0a5b"
       },
       "provenance": {
@@ -128,7 +128,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/newsletters",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "8311ef387b48c676663bfd5a92d500054c7c400b6745602ba060cdba8841f94a"
       },
       "provenance": {
@@ -143,7 +143,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/content-atomisation",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "d2918e5f1b140efb0ebcee9e703f74b027093184453d24b083679d775db1c51c"
       },
       "provenance": {
@@ -158,7 +158,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/campaign-review",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "b391a16de5bef771b7cc56dcf126c0e47086021b168511be8fd453d0a80e7825"
       },
       "provenance": {
@@ -173,7 +173,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/seo-analysis",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "45c0dbcb0452cebb293f7dfba70b47c3f702ab346f7d0e9caa292e820e8b6752"
       },
       "provenance": {
@@ -193,7 +193,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/keyword-research",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "2eab7c58610a0c6df4eaadd6750e0f0b47baee01f88d5e6cde1ff0068b5cf6ca"
       },
       "provenance": {
@@ -213,7 +213,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/geo-optimizer",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "15ff452a5b11535fca12497c1af308ee6dbb04a61df62e350fc1a4b03dc2d71c"
       },
       "provenance": {
@@ -233,7 +233,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/content-planner",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "767cfa9e57f13edf7bca5e8748ea37f1ea818d0be398776dbcf90d8f97f10292"
       },
       "provenance": {
@@ -253,7 +253,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/search-console",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "8fd2229100c7ad44faf6a6db999de8f61a1526601a337406fbddab3bdf124f8f"
       },
       "provenance": {
@@ -273,7 +273,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/google-analytics",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "b96c45f73f4e94e6b29ad3099369519a694789562141940136b542a240fc1f4d"
       },
       "provenance": {
@@ -293,7 +293,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/google-ads-audit",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "0e22af70fe780c5cc3beeae0ae0f38716efaaf38cdde3be9a1b5fb4ec368527e"
       },
       "provenance": {
@@ -313,7 +313,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/google-ads-manage",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "5cfe477497453985014abbb58b4e4ad73e7bdd3ea2bd7ca1c43f4933865b1901"
       },
       "provenance": {
@@ -333,7 +333,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/meta-ads-audit",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "e912577eb1c393178025edf810bbd6a5344b6fa874d2c5a2f55faac2b33f5096"
       },
       "provenance": {
@@ -353,7 +353,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/meta-ads-manage",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "bc3ccb4ac8f1714bcd2d95515f3527e06d6954b27c49f8eca538fd82ac9af906"
       },
       "provenance": {
@@ -373,7 +373,7 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/marketing/skills/paid-ads-review",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "930867b12574a5adf92f63141ec402627a7427893f335fd5ff6b20896d08d0ae"
       },
       "provenance": {
@@ -393,13 +393,28 @@
       "content": {
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/build/skills/parallel-work",
-        "revision": "62ca9e90bc3057d514e55bd6d06bdd6fcd891c96",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
         "sha256": "fe52ed6ce8947571a8fa4a5f4e304f1f0d9b5a4b20f60c0dfcf7dac3a82f754c"
       },
       "provenance": {
         "origin": "author-created",
         "modifiedFromUpstream": false,
         "lastReviewed": "2026-09-12"
+      }
+    },
+    {
+      "id": "quick-tunnel",
+      "description": "Temporarily expose a local HTTP service through a public Cloudflare Quick Tunnel for previews, webhooks, and remote testing.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/build/skills/quick-tunnel",
+        "revision": "81cd22d49ae72821f4f15dd3c92472ed23cd2a8b",
+        "sha256": "57c0038ec69741397e4a9e84118b36cce73fdb40f0fa702dde44172d44f7e161"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-20"
       }
     }
   ],
@@ -438,7 +453,8 @@
       "name": "Build",
       "description": "Provider-neutral engineering methods for substantial implementation, audit, and codebase work.",
       "skills": [
-        "parallel-work"
+        "parallel-work",
+        "quick-tunnel"
       ]
     }
   ]
