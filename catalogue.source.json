@@ -343,6 +343,19 @@
         "modifiedFromUpstream": false,
         "lastReviewed": "2026-09-12"
       }
+    },
+    {
+      "id": "quick-tunnel",
+      "description": "Temporarily expose a local HTTP service through a public Cloudflare Quick Tunnel for previews, webhooks, and remote testing.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/build/skills/quick-tunnel"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-09-20"
+      }
     }
   ],
   "collections": [
@@ -380,7 +393,8 @@
       "name": "Build",
       "description": "Provider-neutral engineering methods for substantial implementation, audit, and codebase work.",
       "skills": [
-        "parallel-work"
+        "parallel-work",
+        "quick-tunnel"
       ]
     }
   ]
