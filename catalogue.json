@@ -424,7 +424,7 @@
         "repository": "https://github.com/Farstax/agent-bridge-skills",
         "path": "collections/design/skills/impeccable",
         "revision": "bbe4e1a2f09ed03305a8c290da3e0c477652e99a",
-        "sha256": "0c53b581b1eb38eb2e1ce1bc464d5f6a306d1ee6ce023755eca091f29d157a37543376b103c3fa01e646188b1b55ea9f14ab15e9b175951db77005eb588341ca3725cbd5ce93e79db7038d9fa2031eb2ded181491b3517e48ded1c766b1593bf2b3372574173a0fde2694a757cb7ff1a0daf13caee0a17ea8a9dbc59161774bafa28761fa20ef4851dec812b70737f69bc5ce24e38711c97bfc2c2ea651234e2342ad04b335f7b8e90140854ac6d58c1aedd3b6a26ce283fdb5d18fdcae3aeed4dead7f3b52badf7083c57ba5fabefb6575f9fdba507c0f4c6c373fa14548c4f267608c1ed60d2e7c3872267e8ee978edfb9b4c2d68767b8e2f5e3b2e9781e17"
+        "sha256": "0c53b581b1eb38eb2e1ce1bc464d5f6a306d1ee6ce023755eca091f29d157a37"
       },
       "provenance": {
         "origin": "adapted-upstream",
