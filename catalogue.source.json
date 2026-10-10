@@ -390,6 +390,74 @@
         "lastReviewed": "2026-10-10",
         "modifiedFromUpstream": true
       }
+    },
+    {
+      "id": "ab-testing",
+      "description": "Design and interpret experiments with pre-specified outcomes, sample assumptions and guardrails.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/ab-testing"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/coreyhaines31/marketingskills",
+        "upstreamRevision": "1efedbc5148b54b2f0f6c6c9fe0be62e151c7fff",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-10-10",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "cro-audit",
+      "description": "Diagnose conversion friction in marketing journeys and prioritise evidence-led hypotheses.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/cro-audit"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/coreyhaines31/marketingskills",
+        "upstreamRevision": "1efedbc5148b54b2f0f6c6c9fe0be62e151c7fff",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-10-10",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "attribution",
+      "description": "Reconcile marketing channel claims with authoritative conversion records and uncertainty.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/attribution"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/coreyhaines31/marketingskills",
+        "upstreamRevision": "1efedbc5148b54b2f0f6c6c9fe0be62e151c7fff",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-10-10",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "pricing-strategy",
+      "description": "Evaluate evidence-led pricing metrics, tier packaging, unit economics and pricing tests.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/marketing/skills/pricing-strategy"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/coreyhaines31/marketingskills",
+        "upstreamRevision": "1efedbc5148b54b2f0f6c6c9fe0be62e151c7fff",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/marketing/NOTICE.md",
+        "lastReviewed": "2026-10-10",
+        "modifiedFromUpstream": true
+      }
     }
   ],
   "collections": [
@@ -419,7 +487,11 @@
         "google-ads-manage",
         "meta-ads-audit",
         "meta-ads-manage",
-        "paid-ads-review"
+        "paid-ads-review",
+        "ab-testing",
+        "cro-audit",
+        "attribution",
+        "pricing-strategy"
       ]
     },
     {
