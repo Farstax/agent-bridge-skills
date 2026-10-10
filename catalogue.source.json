@@ -373,6 +373,23 @@
         "lastReviewed": "2026-10-10",
         "modifiedFromUpstream": true
       }
+    },
+    {
+      "id": "grill-me",
+      "description": "Explicitly stress-test plans and decisions with a one-question-at-a-time, evidence-grounded interview.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/build/skills/grill-me"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/mattpocock/skills",
+        "upstreamRevision": "49dd158d1076134a641b33efb035946536778336",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/build/NOTICE.md",
+        "lastReviewed": "2026-10-10",
+        "modifiedFromUpstream": true
+      }
     }
   ],
   "collections": [
@@ -411,7 +428,8 @@
       "description": "Provider-neutral engineering methods for substantial implementation, audit, and codebase work.",
       "skills": [
         "parallel-work",
-        "quick-tunnel"
+        "quick-tunnel",
+        "grill-me"
       ]
     },
     {
