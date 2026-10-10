@@ -356,6 +356,23 @@
         "modifiedFromUpstream": false,
         "lastReviewed": "2026-09-20"
       }
+    },
+    {
+      "id": "impeccable",
+      "description": "Review, refine and harden frontend interfaces with evidence-led design guidance, without installing a design runtime.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/design/skills/impeccable"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/pbakaus/impeccable",
+        "upstreamRevision": "d631a8827f99414d2b6daba4ef08b7f8701751d7",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/design/NOTICE.md",
+        "lastReviewed": "2026-10-10",
+        "modifiedFromUpstream": true
+      }
     }
   ],
   "collections": [
@@ -395,6 +412,14 @@
       "skills": [
         "parallel-work",
         "quick-tunnel"
+      ]
+    },
+    {
+      "id": "design",
+      "name": "Design",
+      "description": "Frontend interface design, critique, accessibility and visual refinement without installing a second UI runtime.",
+      "skills": [
+        "impeccable"
       ]
     }
   ]
