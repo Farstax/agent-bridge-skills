@@ -458,6 +458,190 @@
         "lastReviewed": "2026-10-10",
         "modifiedFromUpstream": true
       }
+    },
+    {
+      "id": "xlsx",
+      "description": "Create, inspect, edit and validate Excel workbooks while preserving formulas and formatting.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/documents/skills/xlsx"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/anthropics/skills",
+        "upstreamRevision": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/documents/NOTICE.md",
+        "lastReviewed": "2026-11-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "docx",
+      "description": "Create and edit structured Word documents with faithful formatting and read-back verification.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/documents/skills/docx"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/anthropics/skills",
+        "upstreamRevision": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/documents/NOTICE.md",
+        "lastReviewed": "2026-11-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "pptx",
+      "description": "Create, modify and validate editable PowerPoint presentations while preserving templates.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/documents/skills/pptx"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/anthropics/skills",
+        "upstreamRevision": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/documents/NOTICE.md",
+        "lastReviewed": "2026-11-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "pdf",
+      "description": "Read, generate and validate PDF deliverables; disclose scanning and editing limits.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/documents/skills/pdf"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/anthropics/skills",
+        "upstreamRevision": "2c5958ecac7cee2b583967a2c4981d0f4a75c579",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/documents/NOTICE.md",
+        "lastReviewed": "2026-11-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "data-analysis",
+      "description": "Profile datasets, validate calculations, visualise findings and report uncertainty.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/business/skills/data-analysis"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/anthropics/knowledge-work-plugins",
+        "upstreamRevision": "e050c2ec856373787143d7057663a6ebd1277df3",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/business/NOTICE.md",
+        "lastReviewed": "2026-11-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "financial-modelling",
+      "description": "Build auditable financial models with formulas, assumptions, scenarios and reconciliation checks.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/business/skills/financial-modelling"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/anthropics/financial-services",
+        "upstreamRevision": "60565064557ca77b12f62aa7877f365d111c129d",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/business/NOTICE.md",
+        "lastReviewed": "2026-11-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "investment-research",
+      "description": "Prepare evidence-linked company and sector investment research for human review, not trading.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/business/skills/investment-research"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/anthropics/financial-services",
+        "upstreamRevision": "60565064557ca77b12f62aa7877f365d111c129d",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/business/NOTICE.md",
+        "lastReviewed": "2026-11-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "legal-document-review",
+      "description": "Review supplied contracts and legal documents for clauses, obligations, risks and open questions.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/business/skills/legal-document-review"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/anthropics/knowledge-work-plugins",
+        "upstreamRevision": "e050c2ec856373787143d7057663a6ebd1277df3",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/business/NOTICE.md",
+        "lastReviewed": "2026-11-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "sales-research",
+      "description": "Prepare verified prospect and account briefs without inventing contacts or CRM access.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/business/skills/sales-research"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/anthropics/knowledge-work-plugins",
+        "upstreamRevision": "e050c2ec856373787143d7057663a6ebd1277df3",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/business/NOTICE.md",
+        "lastReviewed": "2026-11-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "product-specification",
+      "description": "Turn a user problem into a focused product specification with observable acceptance criteria.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/business/skills/product-specification"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/anthropics/knowledge-work-plugins",
+        "upstreamRevision": "e050c2ec856373787143d7057663a6ebd1277df3",
+        "upstreamLicense": "Apache-2.0",
+        "noticePath": "collections/business/NOTICE.md",
+        "lastReviewed": "2026-11-07",
+        "modifiedFromUpstream": true
+      }
+    },
+    {
+      "id": "deep-research",
+      "description": "Investigate complex questions using independent evidence, opposing perspectives and cited reports.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/research/skills/deep-research"
+      },
+      "provenance": {
+        "origin": "author-created",
+        "modifiedFromUpstream": false,
+        "lastReviewed": "2026-11-07",
+        "noticePath": "collections/research/NOTICE.md"
+      }
     }
   ],
   "collections": [
@@ -510,6 +694,38 @@
       "description": "Frontend interface design, critique, accessibility and visual refinement without installing a second UI runtime.",
       "skills": [
         "impeccable"
+      ]
+    },
+    {
+      "id": "documents",
+      "name": "Documents",
+      "description": "Create and edit Excel, Word, PowerPoint and PDF files in the resident workspace.",
+      "skills": [
+        "xlsx",
+        "docx",
+        "pptx",
+        "pdf"
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "description": "Evidence-led analysis, modelling, investment and legal research, sales intelligence and product requirements.",
+      "skills": [
+        "data-analysis",
+        "financial-modelling",
+        "investment-research",
+        "legal-document-review",
+        "sales-research",
+        "product-specification"
+      ]
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "description": "Multi-source deep research with independently verifiable citations and uncertainty.",
+      "skills": [
+        "deep-research"
       ]
     }
   ]
