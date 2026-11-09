@@ -642,6 +642,23 @@
         "lastReviewed": "2026-11-07",
         "noticePath": "collections/research/NOTICE.md"
       }
+    },
+    {
+      "id": "security-audit",
+      "description": "Conduct source-grounded defensive security reviews and explicitly requested, safely sandboxed coverage-led audits with independent finding validation.",
+      "content": {
+        "repository": "https://github.com/Farstax/agent-bridge-skills",
+        "path": "collections/build/skills/security-audit"
+      },
+      "provenance": {
+        "origin": "adapted-upstream",
+        "upstreamRepository": "https://github.com/cloudflare/security-audit-skill",
+        "upstreamRevision": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+        "upstreamLicense": "MIT",
+        "noticePath": "collections/build/skills/security-audit/NOTICE.md",
+        "lastReviewed": "2026-11-09",
+        "modifiedFromUpstream": true
+      }
     }
   ],
   "collections": [
@@ -685,7 +702,8 @@
       "skills": [
         "parallel-work",
         "quick-tunnel",
-        "grill-me"
+        "grill-me",
+        "security-audit"
       ]
     },
     {
