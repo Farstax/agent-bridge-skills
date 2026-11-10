@@ -19,7 +19,7 @@ def oss_provenance_valid(provenance):
                 and all(key not in provenance for key in upstream_fields))
     if not all(key in provenance for key in upstream_fields):
         return False
-    if re.match(r'^https://github\\.com/', provenance['upstreamRepository'], re.I):
+    if re.match(r'^https://github\.com/', provenance['upstreamRepository'], re.I):
         return re.fullmatch(r'[0-9a-fA-F]{40}', provenance['upstreamRevision']) is not None
     return True
 
