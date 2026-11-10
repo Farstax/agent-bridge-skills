@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import hashlib, json, subprocess
+import hashlib, json, re, subprocess
 from pathlib import Path
 import jsonschema
 root = Path(__file__).resolve().parents[1]
@@ -17,7 +17,11 @@ def oss_provenance_valid(provenance):
     if provenance['origin'] == 'author-created':
         return (not provenance['modifiedFromUpstream']
                 and all(key not in provenance for key in upstream_fields))
-    return all(key in provenance for key in upstream_fields)
+    if not all(key in provenance for key in upstream_fields):
+        return False
+    if re.match(r'^https://github\.com/', provenance['upstreamRepository'], re.I):
+        return re.fullmatch(r'[0-9a-fA-F]{40}', provenance['upstreamRevision']) is not None
+    return True
 
 for skill in catalogue['skills']:
     assert oss_provenance_valid(skill['provenance']), f"incompatible OSS provenance: {skill['id']}"
@@ -33,6 +37,8 @@ adapted_provenance = next(s['provenance'] for s in catalogue['skills']
                           if s['provenance']['origin'] == 'adapted-upstream')
 for key in upstream_fields:
     assert not oss_provenance_valid({k: v for k, v in adapted_provenance.items() if k != key})
+assert not oss_provenance_valid({**adapted_provenance, 'upstreamRevision': 'main'})
+assert oss_provenance_valid({**adapted_provenance, 'upstreamRevision': 'a' * 40})
 
 ids = {skill['id'] for skill in catalogue['skills']}
 assert len(ids) == len(catalogue['skills'])
